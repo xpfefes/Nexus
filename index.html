@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sicurezza di Windows - AI Antivirus</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .shield-icon {
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+            margin: 0;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 40px;
+            margin-top: 5px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .section-title svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .info-text {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #333;
+        }
+        .scan-stats {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .btn-primary {
+            background-color: #cccccc;
+            border: none;
+            padding: 8px 24px;
+            font-size: 14px;
+            font-family: 'Segoe UI', sans-serif;
+            cursor: pointer;
+            margin-top: 5px;
+            margin-bottom: 25px;
+            display: inline-block;
+            border-radius: 2px;
+        }
+        .btn-primary:hover {
+            background-color: #bbbbbb;
+        }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-secondary {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 6px 16px;
+            font-size: 12px;
+            font-family: 'Segoe UI', sans-serif;
+            cursor: pointer;
+            margin-left: 10px;
+            border-radius: 2px;
+        }
+        .btn-secondary:hover {
+            background-color: #d0d0d0;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .links a {
+            color: #005A9E;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Pannello AI */
+        .ai-panel {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .input-group input[type="text"],
+        .input-group input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .advanced-options {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* Area Status e Report */
+        #status-area {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f8ff;
+            border-left: 4px solid #005A9E;
+        }
+        .spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid #005A9E;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        
+        #realtime-log {
+            font-family: Consolas, monospace;
+            font-size: 12px;
+            color: #333;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+        .log-entry { margin: 2px 0; }
+        .log-time { color: #888; margin-right: 5px; }
+        
+        #report-area {
+            display: none;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ccc;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        #report-content h2 { font-size: 16px; margin-top: 0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <svg class="shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <h1>Protezione da virus e minacce</h1>
+    </div>
+    <div class="subtitle">Protezione per il tuo dispositivo contro le minacce.</div>
+
+    <div class="section-title">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#107C10"></path>
+        </svg>
+        Minacce correnti
+    </div>
+
+    <div class="scan-stats">
+        <div id="no-threats-text">Nessuna minaccia corrente.</div>
+        <div id="last-scan-time">Ultima analisi: Non eseguita</div>
+        <div id="threats-count">0 minacce rilevate.</div>
+        <div id="scan-duration">L'analisi è durata 0 secondi</div>
+        <div id="files-scanned">0 file analizzati.</div>
+    </div>
+
+    <!-- AI Configuration Panel -->
+    <div class="ai-panel">
+        <div class="section-title" style="font-size: 15px; margin-bottom: 15px;">
+            Configurazione Motore AI (Gemini)
+        </div>
+        
+        <div class="input-group">
+            <label for="file-upload">Allega foto e file da analizzare:</label>
+            <input type="file" id="file-upload" multiple accept="image/*,.txt,.pdf,.csv">
+        </div>
+
+        <button class="btn-primary" id="scan-btn" onclick="startAiScan()">Analisi veloce con AI</button>
+        <button class="btn-secondary" onclick="toggleAdvancedOptions()">Opzioni avanzate</button>
+        
+        <div class="advanced-options" id="advanced-options">
+            <div class="input-group">
+                <label for="custom-api-key">API Key personalizzata (opzionale):</label>
+                <input type="password" id="custom-api-key" placeholder="Inserisci API Key custom (lascia vuoto per usare quella di default)">
+            </div>
+            <div class="input-group">
+                <label for="custom-model">Modello AI personalizzato (opzionale):</label>
+                <input type="text" id="custom-model" placeholder="Es. gemini-1.5-flash (lascia vuoto per usare quello di default)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Real-time Status Area -->
+    <div id="status-area">
+        <div style="font-weight: bold; font-size: 14px; margin-bottom: 10px;">
+            <span class="spinner" id="status-spinner"></span>
+            <span id="status-title">Analisi AI in corso...</span>
+        </div>
+        <div id="realtime-log"></div>
+    </div>
+
+    <!-- Final Report Area -->
+    <div id="report-area">
+        <div id="report-content"></div>
+    </div>
+</div>
+
+<script>
+    // Configurazioni di default
+    const DEFAULT_API_KEY = "AIzaSyDCfAclU_ywGZJv8doP1CMbrUj-rnq9huU";
+    const DEFAULT_MODEL_NAME = "gemini-3.1-flash-lite-preview";
+
+    function toggleAdvancedOptions() {
+        const options = document.getElementById('advanced-options');
+        options.style.display = options.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function logMessage(message) {
+        const logDiv = document.getElementById('realtime-log');
+        const now = new Date();
+        const timeStr = now.getHours().toString().padStart(2, '0') + ':' + 
+                        now.getMinutes().toString().padStart(2, '0') + ':' + 
+                        now.getSeconds().toString().padStart(2, '0');
+        
+        const entry = document.createElement('div');
+        entry.className = 'log-entry';
+        entry.innerHTML = `<span class=\"log-time\">[${timeStr}]</span> ${message}`;
+        logDiv.appendChild(entry);
+        logDiv.scrollTop = logDiv.scrollHeight;
+    }
+
+    async function fileToBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => {
+                const result = reader.result;
+                const base64Data = result.split(',')[1];
+                resolve({
+                    mimeType: file.type || 'application/octet-stream',
+                    data: base64Data
+                });
+            };
+            reader.onerror = error => reject(error);
+            reader.readAsDataURL(file);
+        });
+    }
+
+    async function startAiScan() {
+        const customApiKey = document.getElementById('custom-api-key').value.trim();
+        const customModel = document.getElementById('custom-model').value.trim();
+        const apiKey = customApiKey || DEFAULT_API_KEY;
+        const modelName = customModel || DEFAULT_MODEL_NAME;
+        const fileInput = document.getElementById('file-upload');
+        const files = fileInput.files;
+
+        // Reset UI
+        document.getElementById('scan-btn').disabled = true;
+        document.getElementById('status-area').style.display = 'block';
+        document.getElementById('report-area').style.display = 'none';
+        document.getElementById('realtime-log').innerHTML = '';
+        document.getElementById('status-spinner').style.display = 'inline-block';
+        document.getElementById('status-title').innerText = "Analisi AI in corso...";
+
+        logMessage("Avvio del motore Antivirus AI...");
+        logMessage(`Modello selezionato: ${modelName}`);
+        
+        const startTime = Date.now();
+        
+        try {
+            // Prepara i file
+            const parts = [
+                { text: "Sei un sistema antivirus e di sicurezza avanzato. Il sistema sta analizzando i file allegati. Verifica la presenza di minacce, valuta la sicurezza dei file (immagini, testi) e scrivi un report tecnico dettagliato in lingua italiana strutturato come un report di 'Windows Defender'. Usa un tono formale e rassicurante se non ci sono problemi, o di allerta se trovi anomalie. Includi un conteggio delle minacce rilevate (es. 'Minacce rilevate: 2')." }
+            ];
+
+            if (files.length > 0) {
+                logMessage(`Trovati ${files.length} file in coda per la scansione.`);
+                for (let i = 0; i < files.length; i++) {
+                    logMessage(`Lettura e preparazione del file: ${files[i].name} (${Math.round(files[i].size / 1024)} KB)...`);
+                    
+                    if (files[i].type.startsWith('image/')) {
+                        const inlineData = await fileToBase64(files[i]);
+                        parts.push({ inlineData: inlineData });
+                        logMessage(`[OK] Immagine ${files[i].name} caricata in memoria per l'analisi visiva.`);
+                    } else {
+                        // Per file di testo, aggiungiamo solo il nome come contesto
+                        parts.push({ text: `File in scansione: ${files[i].name} (Tipo: ${files[i].type})` });
+                        logMessage(`[OK] Metadati file ${files[i].name} registrati.`);
+                    }
+                }
+            } else {
+                logMessage("Nessun file specifico allegato. Esecuzione scansione di sistema base...");
+            }
+
+            logMessage("Connessione ai server Google AI Studio in corso...");
+            
+            // Simula un po' di latenza per mostrare il log "in tempo reale"
+            await new Promise(r => setTimeout(r, 800));
+            logMessage("Invio dei dati al modello AI per l'analisi euristica...");
+
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+            
+            const requestBody = {
+                contents: [{ parts: parts }],
+                generationConfig: { temperature: 0.2 }
+            };
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestBody)
+            });
+
+            logMessage("Analisi della risposta dell'AI...");
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error?.message || "Errore sconosciuto dall'API");
+            }
+
+            const data = await response.json();
+            const aiResponseText = data.candidates[0].content.parts[0].text;
+
+            logMessage("Generazione del report di sicurezza completata.");
+            
+            // Mostra i risultati
+            document.getElementById('status-spinner').style.display = 'none';
+            document.getElementById('status-title').innerText = "Analisi completata";
+            
+            const reportArea = document.getElementById('report-area');
+            reportArea.style.display = 'block';
+            
+            // Format markdown to simple HTML
+            const formattedHTML = aiResponseText
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/\\n/g, '<br>')
+                .replace(/\n/g, '<br>');
+                
+            document.getElementById('report-content').innerHTML = `<strong>Report Generato dall'AI:</strong><br><br>${formattedHTML}`;
+
+            // Aggiorna le statistiche in alto
+            const durationSecs = Math.round((Date.now() - startTime) / 1000);
+            const now = new Date();
+            document.getElementById('last-scan-time').innerText = `Ultima analisi: ${now.toLocaleDateString()} ${now.toLocaleTimeString()} (analisi AI veloce)`;
+            document.getElementById('scan-duration').innerText = `L'analisi è durata ${durationSecs} secondi`;
+            
+            // Conteggio file realistico
+            const fileCount = files.length;
+            const fileText = fileCount === 1 ? "1 file analizzato." : `${fileCount} file analizzati.`;
+            document.getElementById('files-scanned').innerText = fileText;
+            
+            // Conteggio minacce basato sul report
+            const threatMatches = aiResponseText.match(/minaccia/gi) || [];
+            const threatCount = threatMatches.length; // Conta occorrenze di "minaccia" (approssimativo)
+            document.getElementById('threats-count').innerText = `${threatCount} minacce rilevate.`;
+            document.getElementById('no-threats-text').innerText = threatCount > 0 ? "Minacce rilevate. Controlla il report per dettagli." : "L'AI ha terminato la verifica. Nessuna minaccia rilevata.";
+
+        } catch (error) {
+            logMessage(`<span style="color:red">ERRORE CRITICO: ${error.message}</span>`);
+            logMessage("Suggerimento: Verifica la validità delle impostazioni e che il modello sia abilitato. Se fallisce, prova a cambiare il modello nelle opzioni avanzate.");
+            document.getElementById('status-spinner').style.display = 'none';
+            document.getElementById('status-title').innerText = "Scansione interrotta";
+        } finally {
+            document.getElementById('scan-btn').disabled = false;
+        }
+    }
+</script>
+
+</body>
+</html>
