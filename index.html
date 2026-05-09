@@ -1,421 +1,352 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Security Dashboard - Gemini 3.1 Flash-Lite</title>
-    <style>
-        :root {
-            --bg-deep: #030712;
-            --bg-panel: rgba(15, 23, 42, 0.65);
-            --border-subtle: rgba(56, 189, 248, 0.15);
-            --accent-primary: #0ea5e9;
-            --accent-glow: rgba(14, 165, 233, 0.25);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --status-safe: #10b981;
-            --status-warn: #f59e0b;
-            --status-danger: #ef4444;
-            --log-info: #38bdf8;
-            --log-warn: #fbbf24;
-            --log-error: #f87171;
-            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-            --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
-            --radius: 12px;
-            --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISS Tracker | EriK x NASA Tribute</title>
+  
+  <!-- Leaflet CSS (SRI protected) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="anonymous"/>
 
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            padding: 24px;
-            background: radial-gradient(circle at 50% 0%, #0f172a 0%, var(--bg-deep) 60%);
-            color: var(--text-main);
-            font-family: var(--font-main);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            line-height: 1.5;
-        }
+  <style>
+    :root {
+      --bg-deep: #050608;
+      --bg-panel: rgba(12, 15, 20, 0.85);
+      --accent-cyan: #00f3ff;
+      --accent-blue: #0077b6;
+      --text-primary: #e0e6ed;
+      --text-muted: #8b9bb4;
+      --border-glow: rgba(0, 243, 255, 0.3);
+      --font-main: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 1280px;
-            background: var(--bg-panel);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius);
-            padding: 32px;
-            box-shadow: 0 24px 48px -12px rgba(0,0,0,0.5);
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
 
-        .header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 8px;
-        }
-        .shield-icon {
-            width: 40px; height: 40px;
-            color: var(--accent-primary);
-            filter: drop-shadow(0 0 8px var(--accent-glow));
-        }
-        h1 { font-size: 28px; font-weight: 600; margin: 0; letter-spacing: -0.5px; }
-        .subtitle { color: var(--text-muted); font-size: 14px; margin-bottom: 32px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px; }
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #0a0c10 0%, #11141c 100%);
+      padding: 0.75rem 1.5rem;
+      border-bottom: 1px solid var(--border-glow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    header .badge {
+      font-size: 0.75rem;
+      background: var(--accent-blue);
+      color: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-        .stat-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius);
-            padding: 20px;
-            transition: var(--transition);
-        }
-        .stat-card:hover { border-color: var(--accent-primary); transform: translateY(-2px); }
-        .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.2px; display: block; margin-bottom: 6px; }
-        .stat-value { font-size: 22px; font-weight: 700; font-family: var(--font-mono); }
-        .status-badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; }
-        .badge-ready { background: rgba(16, 185, 129, 0.15); color: var(--status-safe); }
-        .badge-scanning { background: rgba(14, 165, 233, 0.15); color: var(--accent-primary); animation: pulse 1.5s infinite; }
-        .badge-danger { background: rgba(239, 68, 68, 0.15); color: var(--status-danger); }
+    /* Main Layout */
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      position: relative;
+    }
 
-        .config-panel {
-            background: rgba(0,0,0,0.25);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius);
-            padding: 24px;
-            margin-bottom: 24px;
-        }
-        .input-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 13px; color: var(--text-muted); }
-        
-        .input-wrapper { position: relative; }
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            background: #020617;
-            border: 1px solid var(--border-subtle);
-            padding: 14px 40px 14px 14px;
-            border-radius: 8px;
-            color: var(--text-main);
-            font-size: 14px;
-            font-family: var(--font-mono);
-            transition: var(--transition);
-        }
-        input:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 3px var(--accent-glow); }
-        .toggle-pw {
-            position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
-            background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 16px;
-        }
-        .toggle-pw:hover { color: var(--text-main); }
+    #map {
+      width: 100%;
+      height: 100%;
+      background: #080a0e;
+    }
 
-        .dropzone {
-            border: 2px dashed var(--border-subtle);
-            border-radius: 8px;
-            padding: 32px;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-            background: rgba(2, 6, 23, 0.4);
-        }
-        .dropzone.drag-over { border-color: var(--accent-primary); background: var(--accent-glow); }
-        .dropzone p { margin: 0; color: var(--text-muted); font-size: 14px; }
-        .dropzone .icon { font-size: 28px; margin-bottom: 8px; display: block; }
-        #files-input { display: none; }
-        .file-list { margin-top: 12px; font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); }
+    /* Info Panel */
+    #info-panel {
+      background: var(--bg-panel);
+      backdrop-filter: blur(12px);
+      border-left: 1px solid var(--border-glow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      z-index: 999;
+    }
+    .panel-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+    }
+    .data-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .data-label { color: var(--text-muted); font-size: 0.9rem; }
+    .data-value { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 1.05rem; font-weight: 500; }
+    
+    #status {
+      margin-top: auto;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    #status::before {
+      content: "";
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #00ff88;
+      box-shadow: 0 0 6px #00ff88;
+    }
+    #status.error::before { background: #ff4757; box-shadow: 0 0 6px #ff4757; }
 
-        .btn-primary {
-            width: 100%;
-            background: linear-gradient(135deg, var(--accent-primary), #0284c7);
-            color: white;
-            border: none;
-            padding: 16px;
-            font-size: 15px;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .btn-primary:hover:not(:disabled) { filter: brightness(1.1); transform: translateY(-1px); box-shadow: 0 8px 20px -4px var(--accent-glow); }
-        .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; filter: grayscale(0.5); }
-        .spinner { width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite; display: none; }
-        .btn-primary.loading .spinner { display: block; }
-        .btn-primary.loading .btn-text { display: none; }
+    /* Responsive */
+    @media (max-width: 768px) {
+      main { grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+      #info-panel {
+        border-left: none;
+        border-top: 1px solid var(--border-glow);
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 1rem;
+        gap: 1rem;
+      }
+      .data-row { flex: 1 1 45%; border-bottom: none; }
+      #status { width: 100%; margin-top: 0.5rem; }
+    }
 
-        #log-console {
-            display: none;
-            background: #000;
-            border: 1px solid #1e293b;
-            border-radius: 8px;
-            padding: 16px;
-            font-family: var(--font-mono);
-            font-size: 12px;
-            max-height: 260px;
-            overflow-y: auto;
-            margin-bottom: 24px;
-            scroll-behavior: smooth;
-        }
-        .log-line { margin-bottom: 4px; border-bottom: 1px solid #0f172a; padding-bottom: 4px; }
-        .log-time { color: #475569; margin-right: 8px; }
-        .log-info { color: var(--log-info); }
-        .log-warn { color: var(--log-warn); }
-        .log-error { color: var(--log-error); }
-
-        #report-result {
-            display: none;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius);
-            padding: 24px;
-            line-height: 1.7;
-            font-size: 14px;
-        }
-        #report-result h2 { margin-top: 0; font-size: 18px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px; }
-        .report-content { white-space: pre-wrap; word-break: break-word; }
-
-        @keyframes spin { to { transform: rotate(360deg); } }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
-        @media (max-width: 640px) {
-            body { padding: 12px; }
-            .container { padding: 20px; }
-            .stats-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    /* Leaflet overrides for dark theme */
+    .leaflet-control-attribution { background: rgba(0,0,0,0.6) !important; color: #888 !important; }
+    .leaflet-control-attribution a { color: var(--accent-cyan) !important; }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <svg class="shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        <h1>AI Deep Scan Terminal</h1>
-    </div>
-    <div class="subtitle">Analisi euristica avanzata con Gemini 3.1 Flash-Lite</div>
+  <header>
+    <h1>🛰️ ISS Real-Time Tracker</h1>
+    <span class="badge">EriK 3.8.6 x NASA</span>
+  </header>
 
-    <div class="stats-grid">
-        <div class="stat-card">
-            <span class="stat-label">Security Status</span>
-            <span class="stat-value"><span id="status-badge" class="status-badge badge-ready">Ready</span></span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-label">Minacce Rilevate</span>
-            <span class="stat-value" id="threat-val">0</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-label">Tempo Analisi</span>
-            <span class="stat-value" id="timer-val">0.00s</span>
-        </div>
-    </div>
+  <main>
+    <div id="map"></div>
+    <aside id="info-panel">
+      <div class="panel-title">Telemetry Stream</div>
+      
+      <div class="data-row">
+        <span class="data-label">Latitude</span>
+        <span class="data-value" id="lat">--.----</span>
+      </div>
+      <div class="data-row">
+        <span class="data-label">Longitude</span>
+        <span class="data-value" id="lon">--.----</span>
+      </div>
+      <div class="data-row">
+        <span class="data-label">Next Update</span>
+        <span class="data-value" id="timer">5.0s</span>
+      </div>
 
-    <div class="config-panel">
-        <div class="input-group">
-            <label>API KEY (Google AI Studio)</label>
-            <div class="input-wrapper">
-                <input type="password" id="api-key-input" placeholder="Incolla la tua chiave qui..." autocomplete="off">
-                <button class="toggle-pw" id="toggle-pw-btn" aria-label="Mostra/Nascondi password">👁️</button>
-            </div>
-        </div>
+      <div id="status">Acquiring signal...</div>
+    </aside>
+  </main>
 
-        <div class="input-group">
-            <label>FILE O SCREENSHOT PER ANALISI</label>
-            <div class="dropzone" id="dropzone">
-                <span class="icon">📁</span>
-                <p>Trascina i file qui o <strong>clicca per selezionare</strong></p>
-                <p style="font-size:11px; margin-top:6px; opacity:0.7">Max 5MB per file • Immagini, Codice, Log, TXT</p>
-            </div>
-            <input type="file" id="files-input" multiple accept="image/*,.txt,.js,.py,.html,.css,.json,.log,.md">
-            <div class="file-list" id="file-list"></div>
-        </div>
+  <!-- Leaflet JS (SRI protected) -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin="anonymous"></script>
 
-        <button class="btn-primary" id="run-btn" onclick="executeScan()">
-            <div class="spinner"></div>
-            <span class="btn-text">INIZIA SCANSIONE SISTEMA</span>
-        </button>
-    </div>
-
-    <div id="log-console"></div>
-
-    <div id="report-result">
-        <h2>📄 Esito Scansione AI</h2>
-        <div id="report-body" class="report-content"></div>
-    </div>
-</div>
-
-<script>
+  <script>
     /**
-     * Utility: Escape HTML to prevent XSS from AI output
+     * ISS Tracker Module
+     * Runtime: ES6+ | Browser: Modern Chromium/Firefox/Safari
+     * Dependencies: Leaflet 1.9.4
      */
-    function escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
-    }
+    (function() {
+      'use strict';
 
-    /**
-     * Logging system with levels and auto-scroll
-     */
-    function addLog(text, level = 'info') {
-        const consoleEl = document.getElementById('log-console');
-        consoleEl.style.display = 'block';
-        const time = new Date().toLocaleTimeString('it-IT', { hour12: false });
-        const levelClass = `log-${level}`;
-        const prefix = level.toUpperCase().padEnd(5);
-        consoleEl.innerHTML += `<div class="log-line"><span class="log-time">[${time}]</span> <span class="${levelClass}">${prefix}</span> ${escapeHtml(text)}</div>`;
-        consoleEl.scrollTop = consoleEl.scrollHeight;
-    }
+      // Configuration
+      const CONFIG = {
+        apiEndpoint: 'https://api.open-notify.org/iss-now.json',
+        updateIntervalMs: 5000,
+        mapCenter: [20, 0],
+        mapZoom: 2,
+        tileUrl: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+        tileAttribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+      };
 
-    /**
-     * File to Base64 converter
-     */
-    async function fileToBase64(file) {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = () => resolve({ mimeType: file.type, data: reader.result.split(',')[1] });
-            reader.onerror = reject;
-            reader.readAsDataURL(file);
+      // State
+      const state = {
+        map: null,
+        marker: null,
+        updateTimerId: null,
+        countdownTimerId: null,
+        nextUpdateTimestamp: 0,
+        consecutiveErrors: 0,
+        isInitialized: false
+      };
+
+      // DOM References
+      const dom = {
+        lat: document.getElementById('lat'),
+        lon: document.getElementById('lon'),
+        timer: document.getElementById('timer'),
+        status: document.getElementById('status')
+      };
+
+      /**
+       * Initialize Leaflet map and UI bindings
+       */
+      function initMap() {
+        state.map = L.map('map', {
+          center: CONFIG.mapCenter,
+          zoom: CONFIG.mapZoom,
+          zoomControl: false,
+          attributionControl: true
         });
-    }
 
-    /**
-     * UI: Password Toggle
-     */
-    document.getElementById('toggle-pw-btn').addEventListener('click', () => {
-        const input = document.getElementById('api-key-input');
-        input.type = input.type === 'password' ? 'text' : 'password';
-    });
+        L.control.zoom({ position: 'bottomright' }).addTo(state.map);
 
-    /**
-     * UI: Drag & Drop + File Selection
-     */
-    const dropzone = document.getElementById('dropzone');
-    const fileInput = document.getElementById('files-input');
-    const fileListEl = document.getElementById('file-list');
+        L.tileLayer(CONFIG.tileUrl, {
+          attribution: CONFIG.tileAttribution,
+          maxZoom: 19,
+          subdomains: 'abcd'
+        }).addTo(state.map);
 
-    dropzone.addEventListener('click', () => fileInput.click());
-    dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('drag-over'); });
-    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag-over'));
-    dropzone.addEventListener('drop', (e) => {
-        e.preventDefault();
-        dropzone.classList.remove('drag-over');
-        fileInput.files = e.dataTransfer.files;
-        updateFileList();
-    });
-    fileInput.addEventListener('change', updateFileList);
+        // Custom ISS marker icon (SVG data URI for zero external deps)
+        const issIcon = L.divIcon({
+          className: 'iss-marker',
+          html: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <circle cx="12" cy="12" r="6" fill="#00f3ff" opacity="0.3"/>
+                   <circle cx="12" cy="12" r="3" fill="#00f3ff"/>
+                   <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="#00f3ff" stroke-width="1.5"/>
+                 </svg>`,
+          iconSize: [24, 24],
+          iconAnchor: [12, 12]
+        });
 
-    function updateFileList() {
-        const files = Array.from(fileInput.files);
-        fileListEl.textContent = files.length ? `📎 ${files.map(f => f.name).join(', ')}` : '';
-    }
+        state.marker = L.marker([0, 0], { icon: issIcon }).addTo(state.map);
+      }
 
-    /**
-     * Core: Execute Scan
-     */
-    async function executeScan() {
-        const apiKey = document.getElementById('api-key-input').value.trim();
-        const btn = document.getElementById('run-btn');
-        const statusBadge = document.getElementById('status-badge');
-        const reportArea = document.getElementById('report-result');
-        const logConsole = document.getElementById('log-console');
-
-        if (!apiKey) {
-            addLog('API Key mancante. Inserisci una chiave valida.', 'error');
-            return;
-        }
-
-        // UI Reset & Loading State
-        btn.disabled = true;
-        btn.classList.add('loading');
-        reportArea.style.display = 'none';
-        logConsole.innerHTML = '';
-        statusBadge.className = 'status-badge badge-scanning';
-        statusBadge.textContent = 'Scanning';
-        document.getElementById('threat-val').textContent = '0';
-        document.getElementById('timer-val').textContent = '0.00s';
-
-        const startTime = performance.now();
-        addLog('Inizializzazione sessione Gemini 3.1 Flash-Lite...', 'info');
-
+      /**
+       * Fetch ISS position, validate, and update state/UI
+       */
+      async function fetchPosition() {
         try {
-            const parts = [{ text: `SYSTEM_PROMPT: Sei un Antivirus basato su AI. Analizza i file o le immagini caricate per identificare virus, malware, script malevoli o comportamenti sospetti.
-VINCOLI:
-1. Non hai accesso a firme digitali o hash.
-2. Analizza codice, log, testi o screenshot per pattern malevoli.
-3. Fornisci un report strutturato in ITALIANO formale.
-4. Alla fine del report scrivi ESATTAMENTE: '[ESITO_VIRUS: SI]' o '[ESITO_VIRUS: NO]'.` }];
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 4000); // 4s network timeout
 
-            const files = Array.from(document.getElementById('files-input').files);
-            if (files.length > 0) {
-                addLog(`Preparazione di ${files.length} oggetti per l'analisi multimodale...`, 'info');
-                for (const f of files) {
-                    if (f.size > 5 * 1024 * 1024) {
-                        addLog(`File ${f.name} troppo grande (>5MB). Saltato.`, 'warn');
-                        continue;
-                    }
-                    if (f.type.startsWith('image/')) {
-                        const b64 = await fileToBase64(f);
-                        parts.push({ inlineData: b64 });
-                        addLog(`Immagine ${f.name} caricata (${(f.size/1024).toFixed(1)}KB).`, 'info');
-                    } else if (f.type.startsWith('text/') || f.name.match(/\.(js|py|html|css|json|log|md|txt|sh|bat|ps1)$/i)) {
-                        const textContent = await f.text();
-                        parts.push({ text: `--- INIZIO FILE: ${f.name} ---\n${textContent.slice(0, 8000)}\n--- FINE FILE ---` });
-                        addLog(`Contenuto testuale di ${f.name} estratto per analisi.`, 'info');
-                    } else {
-                        addLog(`File binario ${f.name} non supportato per analisi testuale. Saltato.`, 'warn');
-                    }
-                }
-            }
+          const response = await fetch(CONFIG.apiEndpoint, { signal: controller.signal });
+          clearTimeout(timeoutId);
 
-            addLog('Invio payload al Neural Core...', 'info');
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key=${apiKey}`;
-            
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ contents: [{ parts }] })
-            });
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          
+          const data = await response.json();
+          if (data.message !== 'success') throw new Error('API returned non-success message');
 
-            const result = await response.json();
-            if (!response.ok) throw new Error(result.error?.message || `HTTP ${response.status}`);
+          const lat = parseFloat(data.iss_position.latitude);
+          const lon = parseFloat(data.iss_position.longitude);
 
-            const aiText = result.candidates?.[0]?.content?.parts?.[0]?.text || 'Nessuna risposta dal modello.';
-            const hasVirus = /\[ESITO_VIRUS:\s*SI\]/i.test(aiText);
-            const cleanOutput = aiText.replace(/\[ESITO_VIRUS:\s*(SI|NO)\]/gi, '').trim();
+          if (isNaN(lat) || isNaN(lon)) throw new Error('Invalid coordinates received');
 
-            const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
-            document.getElementById('timer-val').textContent = `${elapsed}s`;
+          // Update marker & map view (smooth pan only on first load to preserve UX)
+          state.marker.setLatLng([lat, lon]);
+          if (!state.isInitialized) {
+            state.map.setView([lat, lon], CONFIG.mapZoom, { animate: true });
+            state.isInitialized = true;
+          }
 
-            reportArea.style.display = 'block';
-            document.getElementById('report-body').innerHTML = escapeHtml(cleanOutput);
+          // Update UI
+          dom.lat.textContent = lat.toFixed(4);
+          dom.lon.textContent = lon.toFixed(4);
+          dom.status.textContent = 'Signal locked';
+          dom.status.classList.remove('error');
 
-            if (hasVirus) {
-                document.getElementById('threat-val').innerHTML = `<span style="color:var(--status-danger); font-weight:bold;">1 MINACCIA</span>`;
-                statusBadge.className = 'status-badge badge-danger';
-                statusBadge.textContent = 'Pericolo';
-                addLog('⚠️ MINACCIA RILEVATA! Consultare il report.', 'error');
-            } else {
-                document.getElementById('threat-val').innerHTML = `<span style="color:var(--status-safe); font-weight:bold;">0</span>`;
-                statusBadge.className = 'status-badge badge-ready';
-                statusBadge.textContent = 'Sicuro';
-                addLog('✅ Nessuna minaccia identificata.', 'info');
-            }
+          // Reset error counter & schedule next update
+          state.consecutiveErrors = 0;
+          scheduleNextUpdate();
 
         } catch (err) {
-            addLog(`ERRORE: ${err.message}`, 'error');
-            statusBadge.className = 'status-badge badge-danger';
-            statusBadge.textContent = 'Errore';
-        } finally {
-            btn.disabled = false;
-            btn.classList.remove('loading');
+          handleError(err);
         }
-    }
-</script>
+      }
+
+      /**
+       * Handle network/API failures gracefully
+       */
+      function handleError(err) {
+        state.consecutiveErrors++;
+        dom.status.textContent = `Signal lost (${err.message || 'Timeout'})`;
+        dom.status.classList.add('error');
+        
+        // Exponential backoff cap at 30s to avoid hammering a down API
+        const backoffMs = Math.min(CONFIG.updateIntervalMs * Math.pow(2, state.consecutiveErrors - 1), 30000);
+        clearTimeout(state.updateTimerId);
+        state.updateTimerId = setTimeout(fetchPosition, backoffMs);
+        
+        // Keep countdown running but show retry state
+        state.nextUpdateTimestamp = Date.now() + backoffMs;
+      }
+
+      /**
+       * Schedule the next API poll and reset countdown target
+       */
+      function scheduleNextUpdate() {
+        clearTimeout(state.updateTimerId);
+        state.nextUpdateTimestamp = Date.now() + CONFIG.updateIntervalMs;
+        state.updateTimerId = setTimeout(fetchPosition, CONFIG.updateIntervalMs);
+      }
+
+      /**
+       * High-precision countdown updater (runs every 100ms for smooth UI)
+       */
+      function updateCountdown() {
+        if (!state.nextUpdateTimestamp) return;
+        const remaining = Math.max(0, state.nextUpdateTimestamp - Date.now());
+        dom.timer.textContent = (remaining / 1000).toFixed(1) + 's';
+      }
+
+      /**
+       * Cleanup intervals on page unload to prevent memory leaks
+       */
+      function cleanup() {
+        clearTimeout(state.updateTimerId);
+        clearInterval(state.countdownTimerId);
+      }
+
+      /**
+       * Bootstrap sequence
+       */
+      function bootstrap() {
+        initMap();
+        state.countdownTimerId = setInterval(updateCountdown, 100);
+        fetchPosition(); // Initial fetch
+        window.addEventListener('beforeunload', cleanup);
+      }
+
+      // Defer init until DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bootstrap);
+      } else {
+        bootstrap();
+      }
+    })();
+  </script>
 </body>
 </html>
