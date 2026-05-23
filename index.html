@@ -5,51 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
 <meta name="theme-color" content="#0a0a0f" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="description" content="NEXUS Fitness AI 7.1 Stable — Premium fitness platform with Nexu-AI coach" />
 <title>NEXUS Fitness AI 7.1 Stable</title>
-<link rel="manifest" href='data:application/manifest+json,{"name":"NEXUS Fitness AI","short_name":"NexusFit","start_url":".","display":"standalone","background_color":"#07070c","theme_color":"#00d4ff","description":"Premium AI fitness platform"}'>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
-/* =========================================================
-   ULTRA OPTIMIZED CSS v33.101.8081
-   Performance: containment, will-change, reduced repaints
-   ========================================================= */
-:root{
-  --bg-0:#07070c;--bg-1:#0d0d15;--bg-2:#13131e;--bg-3:#1a1a28;
-  --surface:rgba(255,255,255,.04);--surface-hover:rgba(255,255,255,.08);
-  --border:rgba(255,255,255,.08);--border-strong:rgba(255,255,255,.14);
-  --text-0:#f5f7ff;--text-1:#b8bcd0;--text-2:#7a7e95;--text-3:#4a4d63;
-  --accent:#00d4ff;--accent-2:#0ea5e9;
-  --accent-glow:rgba(0,212,255,.35);--accent-soft:rgba(14,165,233,.15);
-  --red:#ff3355;--green:#22e39a;--amber:#ffb547;--purple:#a855f7;--pink:#ff0080;
-  --r-sm:10px;--r-md:16px;--r-lg:24px;
-  --ease:cubic-bezier(.4,0,.2,1);
-  --safe-b:env(safe-area-inset-bottom,0px);--safe-t:env(safe-area-inset-top,0px);
-  --glass-blur:20px;--glow-mult:1;--anim-speed:1;--msg-radius:18px;
-  --font-scale:1;
-}
+:root{--bg-0:#07070c;--bg-1:#0d0d15;--bg-2:#13131e;--bg-3:#1a1a28;--surface:rgba(255,255,255,.04);--surface-hover:rgba(255,255,255,.08);--border:rgba(255,255,255,.08);--border-strong:rgba(255,255,255,.14);--text-0:#f5f7ff;--text-1:#b8bcd0;--text-2:#7a7e95;--text-3:#4a4d63;--accent:#00d4ff;--accent-2:#0ea5e9;--accent-glow:rgba(0,212,255,.35);--accent-soft:rgba(14,165,233,.15);--red:#ff3355;--green:#22e39a;--amber:#ffb547;--purple:#a855f7;--pink:#ff0080;--r-sm:10px;--r-md:16px;--r-lg:24px;--ease:cubic-bezier(.4,0,.2,1);--safe-b:env(safe-area-inset-bottom,0px);--safe-t:env(safe-area-inset-top,0px);--glass-blur:20px;--glow-mult:1;--anim-speed:1;--msg-radius:18px;--font-scale:1}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Roboto,sans-serif;
-  background:var(--bg-0);color:var(--text-0);
-  min-height:100vh;min-height:100dvh;overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;line-height:1.5;
-  font-size:calc(15px * var(--font-scale));
-  contain:layout style;
-}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Roboto,sans-serif;background:var(--bg-0);color:var(--text-0);min-height:100vh;min-height:100dvh;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.5;font-size:calc(15px * var(--font-scale));contain:layout style}
 button,input,textarea,select{font-family:inherit;color:inherit;font-size:inherit}
 button{background:none;border:none;cursor:pointer}
-input,textarea,select{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--r-sm);padding:12px 14px;color:var(--text-0);
-  width:100%;outline:none;transition:border-color .2s var(--ease),background .2s var(--ease);
-}
+input,textarea,select{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px 14px;color:var(--text-0);width:100%;outline:none;transition:border-color .2s var(--ease),background .2s var(--ease)}
 input:focus,textarea:focus,select:focus{border-color:var(--accent);background:var(--surface-hover);box-shadow:0 0 0 3px var(--accent-soft)}
 input::placeholder,textarea::placeholder{color:var(--text-3)}
-
-/* Background effects */
 .bg-fx{position:fixed;inset:0;pointer-events:none;z-index:-1;contain:strict}
 .bg-fx-grad{inset:-20%;background:radial-gradient(60% 50% at 20% 10%,color-mix(in srgb,var(--accent) 15%,transparent),transparent 60%),radial-gradient(40% 40% at 80% 90%,rgba(255,51,85,.06),transparent 60%),radial-gradient(50% 50% at 50% 50%,rgba(168,85,247,.04),transparent 60%);filter:blur(40px);animation:bgShift calc(20s / var(--anim-speed)) ease-in-out infinite alternate;will-change:transform}
 .bg-fx-grid{background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%)}
@@ -62,8 +29,6 @@ body.no-grid .bg-fx-grid{display:none}
 body.no-scan .bg-fx-scan{display:none}
 body.no-particles #particlesCanvas{display:none}
 body.reduce-motion *,body.reduce-motion *::before,body.reduce-motion *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-
-/* App shell */
 .app{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;position:relative;padding-bottom:calc(84px + var(--safe-b));contain:layout}
 .topbar{position:sticky;top:0;z-index:50;padding:12px 20px;padding-top:calc(12px + var(--safe-t));backdrop-filter:blur(var(--glass-blur)) saturate(180%);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(180%);background:rgba(7,7,12,.72);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;contain:layout}
 body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--bg-1)}
@@ -78,15 +43,11 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .topbar-actions{display:flex;gap:6px}
 .icon-btn{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:var(--surface);border:1px solid var(--border);transition:all .2s var(--ease);color:var(--text-1)}
 .icon-btn:hover{background:var(--surface-hover);color:var(--text-0);transform:translateY(-1px)}
-
-/* Pages */
 .page{display:none;padding:16px 20px 24px;animation:fadeIn calc(.3s / var(--anim-speed)) var(--ease);contain:layout style}
 .page.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .page-title{font-size:26px;font-weight:800;margin-bottom:4px;letter-spacing:-.02em}
 .page-subtitle{color:var(--text-2);font-size:14px;margin-bottom:20px}
-
-/* Cards */
 .card{background:linear-gradient(180deg,var(--surface),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:var(--r-md);padding:18px;backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));contain:content}
 .card.glow{box-shadow:0 0 0 1px var(--accent-soft),0 8px calc(32px * var(--glow-mult)) color-mix(in srgb,var(--accent) 12%,transparent);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
 .card.holo{position:relative;border:none}
@@ -94,8 +55,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 @keyframes holoBorder{0%{background-position:0% 50%}100%{background-position:300% 50%}}
 .card+.card{margin-top:12px}
 .card-title{font-size:13px;font-weight:600;color:var(--text-2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-
-/* Hero */
 .hero{background:radial-gradient(60% 100% at 0% 0%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 60%),linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.01));border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);border-radius:var(--r-lg);padding:22px;position:relative;overflow:hidden;contain:layout}
 .hero::after{content:"";position:absolute;top:-50%;right:-30%;width:200px;height:200px;background:radial-gradient(circle,var(--accent-glow),transparent 70%);filter:blur(30px);pointer-events:none}
 .hero-greeting{color:var(--text-1);font-size:14px;margin-bottom:2px}
@@ -103,8 +62,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .hero-name span{color:var(--accent)}
 .hero-ai-msg{margin-top:14px;padding:12px 14px;background:color-mix(in srgb,var(--accent) 10%,transparent);border-left:2px solid var(--accent);border-radius:0 var(--r-sm) var(--r-sm) 0;font-size:13px;color:var(--text-1);line-height:1.5}
 .hero-ai-msg strong{color:var(--accent);font-weight:600}
-
-/* Stats */
 .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
 .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:14px;contain:layout}
 .stat-label{font-size:11px;color:var(--text-2);text-transform:uppercase;letter-spacing:.08em;display:flex;align-items:center;gap:6px}
@@ -113,8 +70,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .stat-bar{height:4px;background:var(--bg-3);border-radius:99px;margin-top:10px;overflow:hidden}
 .stat-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:99px;box-shadow:0 0 calc(8px * var(--glow-mult)) var(--accent-glow);transition:width .6s var(--ease)}
 .stat.accent .stat-value{color:var(--accent)}.stat.red .stat-value{color:var(--red)}.stat.green .stat-value{color:var(--green)}.stat.amber .stat-value{color:var(--amber)}
-
-/* Recovery Score Card */
 .recovery-card{background:linear-gradient(135deg,color-mix(in srgb,var(--green) 10%,var(--surface)),var(--surface));border:1px solid color-mix(in srgb,var(--green) 25%,transparent);border-radius:var(--r-md);padding:18px;display:flex;align-items:center;gap:16px}
 .recovery-score{width:80px;height:80px;border-radius:50%;background:conic-gradient(var(--green) var(--pct,0%),var(--bg-3) 0%);display:grid;place-items:center;position:relative;flex-shrink:0}
 .recovery-score::before{content:"";position:absolute;inset:6px;background:var(--bg-1);border-radius:50%}
@@ -122,13 +77,10 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .recovery-info{flex:1}
 .recovery-title{font-weight:700;font-size:15px;margin-bottom:4px}
 .recovery-detail{font-size:12px;color:var(--text-1);line-height:1.5}
-
 .quick-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
 .qa{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:14px 8px;text-align:center;transition:all .2s var(--ease);cursor:pointer}
 .qa:hover{background:var(--surface-hover);transform:translateY(-2px);border-color:var(--border-strong)}
 .qa-icon{font-size:22px;margin-bottom:4px}.qa-label{font-size:11px;color:var(--text-2);font-weight:500}
-
-/* Hydration */
 .hydration{display:flex;align-items:center;gap:14px;padding:4px 0}
 .hydration-visual{width:70px;height:70px;border-radius:50%;background:conic-gradient(var(--accent) var(--pct,0%),var(--bg-3) 0%);display:grid;place-items:center;position:relative;flex-shrink:0}
 .hydration-visual::before{content:"";position:absolute;inset:6px;background:var(--bg-1);border-radius:50%}
@@ -139,8 +91,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .hydration-controls{display:flex;gap:6px;margin-top:8px}
 .hydration-btn{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px;font-size:12px;font-weight:600;transition:all .2s var(--ease)}
 .hydration-btn:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
-
-/* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:var(--r-md);font-weight:700;transition:all .2s var(--ease);white-space:nowrap;border:1px solid transparent;width:100%}
 .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#001018;box-shadow:0 4px calc(20px * var(--glow-mult)) var(--accent-glow)}
 .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px calc(28px * var(--glow-mult)) var(--accent-glow)}
@@ -149,16 +99,12 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .btn-danger{background:rgba(255,51,85,.12);border-color:rgba(255,51,85,.3);color:var(--red)}
 .btn-danger:hover{background:rgba(255,51,85,.2)}
 .btn-sm{padding:10px 14px;font-size:13px}
-
-/* Bottom nav */
 .bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:rgba(13,13,21,.85);backdrop-filter:blur(var(--glass-blur)) saturate(180%);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(180%);border-top:1px solid var(--border);padding:8px 6px calc(8px + var(--safe-b));display:grid;grid-template-columns:repeat(7,1fr);gap:2px;z-index:100}
 .nav-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;border-radius:10px;color:var(--text-2);transition:all .2s var(--ease);font-size:9px;font-weight:600}
 .nav-btn svg{width:20px;height:20px;stroke-width:2}
 .nav-btn:hover{color:var(--text-0)}
 .nav-btn.active{color:var(--accent);background:var(--accent-soft)}
 .nav-btn.active svg{filter:drop-shadow(0 0 calc(6px * var(--glow-mult)) var(--accent-glow))}
-
-/* AI icon */
 .ai-icon{display:inline-block;position:relative}
 .ai-icon svg{width:22px;height:22px;filter:drop-shadow(0 0 calc(8px * var(--glow-mult)) var(--accent-glow));transition:transform .3s var(--ease)}
 .nav-btn.active .ai-icon svg{animation:aiPulse calc(2s / var(--anim-speed)) ease-in-out infinite}
@@ -166,8 +112,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 @keyframes aiPulse{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.08) rotate(8deg)}}
 .ai-sparkle{animation:sparkle calc(3s / var(--anim-speed)) ease-in-out infinite}
 @keyframes sparkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(.85)}}
-
-/* Nexu-AI header */
 .nexuai-header{background:radial-gradient(80% 120% at 10% 0%,color-mix(in srgb,var(--accent) 25%,transparent),transparent 60%),radial-gradient(60% 100% at 90% 100%,color-mix(in srgb,var(--purple) 20%,transparent),transparent 60%),linear-gradient(135deg,var(--bg-2),var(--bg-1));border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);border-radius:var(--r-lg);padding:20px;margin-bottom:16px;position:relative;overflow:hidden}
 .nexuai-header::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent 40px,rgba(0,212,255,.03) 40px,rgba(0,212,255,.03) 41px);pointer-events:none}
 .nexuai-logo{display:flex;align-items:center;gap:14px;margin-bottom:12px;position:relative;z-index:1}
@@ -180,8 +124,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .nexuai-status{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;background:rgba(34,227,154,.15);border:1px solid rgba(34,227,154,.3);color:var(--green);font-size:11px;font-weight:700;margin-top:8px}
 .nexuai-status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:statusBlink 2s ease-in-out infinite}
 @keyframes statusBlink{0%,100%{opacity:1}50%{opacity:.4}}
-
-/* Chat */
 .model-switcher{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;margin-bottom:14px}
 .model-switcher::-webkit-scrollbar{display:none}
 .model-chip{padding:8px 14px;border-radius:99px;background:var(--surface);border:1px solid var(--border);font-size:12px;font-weight:600;white-space:nowrap;transition:all .2s var(--ease);display:inline-flex;align-items:center;gap:6px;flex-shrink:0}
@@ -195,8 +137,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .msg.ai{align-self:flex-start;background:var(--surface);border:1px solid var(--border);border-bottom-left-radius:4px;color:var(--text-0)}
 .msg.system{align-self:center;background:rgba(255,51,85,.1);border:1px solid rgba(255,51,85,.25);color:var(--red);font-size:12px;max-width:95%;text-align:center}
 .msg img{max-width:100%;border-radius:12px;margin-bottom:8px;display:block}
-
-/* Rainbow */
 .msg.rainbow{background:linear-gradient(var(--bg-2),var(--bg-2)) padding-box,linear-gradient(135deg,#ff0080,#ff8c00,#ffd700,#00ff88,#00d4ff,#a855f7,#ff0080) border-box;border:2px solid transparent;background-size:100% 100%,300% 300%;animation:rainbowBorder calc(4s / var(--anim-speed)) linear infinite,msgIn calc(.3s / var(--anim-speed)) var(--ease);box-shadow:0 0 calc(20px * var(--glow-mult)) rgba(255,0,128,.2),0 0 calc(40px * var(--glow-mult)) rgba(0,212,255,.15)}
 .msg.rainbow .msg-text{background:linear-gradient(90deg,#ff0080,#ff8c00,#ffd700,#00ff88,#00d4ff,#a855f7,#ff0080);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:rainbowText calc(3s / var(--anim-speed)) linear infinite;font-weight:500}
 @keyframes rainbowBorder{0%{background-position:0 0,0% 50%}50%{background-position:0 0,100% 50%}100%{background-position:0 0,0% 50%}}
@@ -208,7 +148,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .msg.rainbow .typing span{background:linear-gradient(135deg,#ff0080,#00d4ff,#a855f7);animation:bounce calc(1.4s / var(--anim-speed)) infinite var(--ease),hueShift calc(2s / var(--anim-speed)) linear infinite}
 @keyframes hueShift{0%,100%{filter:hue-rotate(0deg)}50%{filter:hue-rotate(180deg)}}
 @keyframes bounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-6px);opacity:1}}
-
 .chat-input-row{margin-top:12px;display:flex;gap:8px;align-items:flex-end}
 .chat-input{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:12px 14px;min-height:48px;max-height:120px;resize:none}
 .send-btn,.upload-btn{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;flex-shrink:0;transition:all .2s var(--ease)}
@@ -220,8 +159,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .quick-prompts{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .qp{padding:8px 12px;border-radius:99px;background:var(--surface);border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--text-1);cursor:pointer;transition:all .2s var(--ease)}
 .qp:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
-
-/* Copilot */
 .copilot-fab{position:fixed;bottom:calc(100px + var(--safe-b));right:16px;width:60px;height:60px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.25),transparent 60%),linear-gradient(135deg,var(--accent),var(--purple));display:grid;place-items:center;box-shadow:0 8px 32px var(--accent-glow),0 0 0 2px rgba(255,255,255,.1),inset 0 0 20px rgba(255,255,255,.1);z-index:80;transition:all .3s var(--ease);cursor:pointer;animation:fabFloat 3s ease-in-out infinite}
 @keyframes fabFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 .copilot-fab:hover{transform:scale(1.1)}
@@ -235,8 +172,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .copilot-quick{display:flex;flex-direction:column;gap:6px}
 .copilot-quick-btn{padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);text-align:left;font-size:13px;color:var(--text-0);transition:all .2s var(--ease)}
 .copilot-quick-btn:hover{background:var(--accent-soft);border-color:var(--accent)}
-
-/* Workout */
 .tabs{display:flex;gap:6px;background:var(--bg-1);padding:4px;border-radius:var(--r-md);border:1px solid var(--border);margin-bottom:16px;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{flex:1;padding:10px 14px;border-radius:var(--r-sm);font-size:13px;font-weight:600;color:var(--text-2);transition:all .2s var(--ease);white-space:nowrap;min-width:max-content}
@@ -257,14 +192,11 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .pr-badge{display:inline-block;padding:2px 8px;border-radius:99px;background:linear-gradient(135deg,#ffd700,#ff8c00);color:#000;font-size:10px;font-weight:800;margin-left:6px;letter-spacing:.05em;animation:prPulse calc(2s / var(--anim-speed)) ease-in-out infinite}
 @keyframes prPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,215,0,.6)}50%{box-shadow:0 0 0 8px rgba(255,215,0,0)}}
 .rpe-select{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 6px;color:var(--text-0);font-size:12px;font-weight:600;text-align:center;appearance:none;cursor:pointer}
-
 .timer-floating{position:fixed;bottom:calc(96px + var(--safe-b));right:16px;background:linear-gradient(135deg,var(--bg-2),var(--bg-3));border:1px solid var(--accent);border-radius:var(--r-lg);padding:12px 16px;box-shadow:0 8px calc(32px * var(--glow-mult)) var(--accent-glow);z-index:90;display:none;align-items:center;gap:12px;animation:slideUp calc(.3s / var(--anim-speed)) var(--ease);min-width:180px}
 .timer-floating.active{display:flex}
 @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
 .timer-time{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--accent)}
 .timer-stop{width:36px;height:36px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center}
-
-/* Nutrition */
 .macro-ring-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .macro-ring{text-align:center;padding:10px 6px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md)}
 .ring-svg{width:60px;height:60px;transform:rotate(-90deg)}
@@ -278,12 +210,9 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .meal-meta{font-size:12px;color:var(--text-2);margin-top:2px}
 .meal-kcal{font-weight:700;color:var(--accent)}
 .meal-category{display:inline-block;padding:2px 8px;border-radius:99px;font-size:10px;font-weight:600;margin-right:6px;background:var(--accent-soft);color:var(--accent)}
-
 .fasting-card{background:linear-gradient(135deg,rgba(168,85,247,.08),rgba(0,212,255,.05));border:1px solid color-mix(in srgb,var(--purple) 30%,transparent);border-radius:var(--r-md);padding:16px;position:relative;overflow:hidden}
 .fasting-timer{font-size:32px;font-weight:800;color:var(--purple);font-variant-numeric:tabular-nums;text-align:center;margin:8px 0}
 .fasting-phase{text-align:center;font-size:13px;color:var(--text-1);font-weight:600}
-
-/* Progress & charts */
 .chart-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:14px;margin-bottom:12px;height:220px;position:relative}
 .chart-wrap canvas{width:100%!important;height:100%!important}
 .insight{display:flex;gap:12px;padding:14px;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r-sm);margin-bottom:8px}
@@ -291,8 +220,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .insight-icon{font-size:18px;flex-shrink:0}
 .insight-text{font-size:13px;line-height:1.5}
 .insight-title{font-weight:700;font-size:14px;margin-bottom:2px}
-
-/* Settings */
 .setting-group{margin-bottom:18px}
 .setting-group-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-2);margin-bottom:10px;font-weight:600;display:flex;align-items:center;gap:8px}
 .setting-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);gap:12px}
@@ -312,8 +239,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .range-input{-webkit-appearance:none;appearance:none;height:6px;border-radius:99px;background:var(--bg-3);border:none;padding:0;cursor:pointer}
 .range-input::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:var(--accent);cursor:pointer;box-shadow:0 0 calc(8px * var(--glow-mult)) var(--accent-glow)}
 .range-input::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--accent);cursor:pointer;border:none}
-
-/* Themes */
 .theme-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .theme-card{padding:14px;border-radius:var(--r-md);cursor:pointer;transition:all .2s var(--ease);border:2px solid transparent;position:relative;overflow:hidden;min-height:80px;display:flex;flex-direction:column;justify-content:flex-end}
 .theme-card:hover{transform:translateY(-2px)}
@@ -326,16 +251,12 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .theme-intel{background:linear-gradient(135deg,#0071c5,#00aeef)}
 .theme-nasa{background:linear-gradient(135deg,#0b3d91,#fc3d21)}
 .theme-dark{background:linear-gradient(135deg,#0a0a0f,#1a1a28)}
-
-/* Modal */
 .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
 .modal-backdrop.active{display:flex}
 .modal{background:var(--bg-2);border:1px solid var(--border-strong);border-radius:var(--r-lg);padding:24px;max-width:420px;width:100%;max-height:85vh;overflow-y:auto;animation:modalIn calc(.3s / var(--anim-speed)) var(--ease)}
 @keyframes modalIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
 .modal-title{font-size:18px;font-weight:800;margin-bottom:6px}
 .modal-footer{display:flex;gap:10px;margin-top:18px}
-
-/* Toast */
 .toast-container{position:fixed;top:calc(20px + var(--safe-t));left:50%;transform:translateX(-50%);z-index:300;display:flex;flex-direction:column;gap:8px;pointer-events:none;max-width:calc(100% - 40px)}
 .toast{background:var(--bg-2);border:1px solid var(--border-strong);border-radius:var(--r-md);padding:12px 16px;font-weight:500;box-shadow:0 8px 32px rgba(0,0,0,.5);animation:toastIn calc(.3s / var(--anim-speed)) var(--ease);display:flex;align-items:center;gap:10px;pointer-events:auto;max-width:380px}
 .toast.success{border-left:3px solid var(--green)}
@@ -343,8 +264,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .toast.info{border-left:3px solid var(--accent)}
 .toast.pr{border-left:3px solid #ffd700;background:linear-gradient(90deg,rgba(255,215,0,.1),var(--bg-2))}
 @keyframes toastIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-
-/* Utils */
 .hidden{display:none!important}
 .flex{display:flex}.flex-between{display:flex;justify-content:space-between;align-items:center}
 .gap-8{gap:8px}.mt-8{margin-top:8px}.mt-12{margin-top:12px}.mt-16{margin-top:16px}
@@ -353,14 +272,11 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .version-tag{text-align:center;font-size:10px;color:var(--text-3);padding:12px;letter-spacing:.05em}
 ::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:99px}
-
-/* Tools */
 .tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:16px;margin-bottom:12px;transition:all .2s var(--ease);cursor:pointer}
 .tool-card:hover{border-color:var(--accent);transform:translateY(-1px)}
 .tool-card-title{font-weight:700;font-size:15px;margin-bottom:4px}
 .tool-card-desc{font-size:12px;color:var(--text-2)}
 .tool-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-
 .exercise-lib-item{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);margin-bottom:6px;cursor:pointer;transition:all .2s var(--ease)}
 .exercise-lib-item:hover{border-color:var(--accent);background:var(--accent-soft)}
 .exercise-lib-name{font-weight:600;font-size:14px}
@@ -369,7 +285,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .category-chips::-webkit-scrollbar{display:none}
 .cat-chip{padding:6px 12px;border-radius:99px;background:var(--surface);border:1px solid var(--border);font-size:12px;font-weight:600;white-space:nowrap;cursor:pointer;transition:all .2s var(--ease)}
 .cat-chip.active{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
-
 .achievement-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .achievement{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:12px;text-align:center;position:relative;transition:all .2s var(--ease)}
 .achievement.locked{opacity:.4;filter:grayscale(1)}
@@ -377,14 +292,11 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .achievement-icon{font-size:28px;margin-bottom:4px}
 .achievement-name{font-size:11px;font-weight:600}
 .achievement-desc{font-size:10px;color:var(--text-2);margin-top:2px}
-
 .calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:12px}
 .cal-day{aspect-ratio:1;display:grid;place-items:center;font-size:11px;font-weight:600;border-radius:var(--r-sm);background:var(--surface);color:var(--text-2)}
 .cal-day.header{background:transparent;font-size:10px;text-transform:uppercase;letter-spacing:.05em}
 .cal-day.has-workout{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)}
 .cal-day.today{border:1px solid var(--accent);color:var(--accent)}
-
-/* Body page */
 .body-metric-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:16px;display:flex;align-items:center;gap:14px}
 .body-metric-icon{width:48px;height:48px;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;font-size:24px;flex-shrink:0}
 .body-metric-info{flex:1}
@@ -394,8 +306,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .body-metric-trend.up{color:var(--green)}
 .body-metric-trend.down{color:var(--red)}
 .body-metric-trend.stable{color:var(--text-2)}
-
-/* Habits */
 .habit-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);margin-bottom:6px;transition:all .2s var(--ease)}
 .habit-item:hover{border-color:var(--accent)}
 .habit-check{width:28px;height:28px;border-radius:8px;border:2px solid var(--border-strong);display:grid;place-items:center;cursor:pointer;transition:all .2s var(--ease);flex-shrink:0}
@@ -403,8 +313,6 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .habit-check.done::after{content:"✓";color:#fff;font-weight:800;font-size:14px}
 .habit-name{flex:1;font-size:14px;font-weight:500}
 .habit-streak{font-size:11px;color:var(--text-2);padding:2px 8px;background:var(--bg-3);border-radius:99px}
-
-/* Profile */
 .profile-hero{background:radial-gradient(80% 100% at 0% 0%,color-mix(in srgb,var(--accent) 20%,transparent),transparent 60%),linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.01));border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);border-radius:var(--r-lg);padding:24px;text-align:center;position:relative;overflow:hidden}
 .profile-avatar-lg{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--purple));display:grid;place-items:center;margin:0 auto 12px;cursor:pointer;overflow:hidden;border:3px solid var(--accent);box-shadow:0 0 calc(24px * var(--glow-mult)) var(--accent-glow);position:relative}
 .profile-avatar-lg img{width:100%;height:100%;object-fit:cover}
@@ -413,10 +321,7 @@ body.no-glass .topbar,body.no-glass .card,body.no-glass .bottom-nav{backdrop-fil
 .profile-avatar-lg:hover .edit-overlay{opacity:1}
 .profile-name-display{font-size:24px;font-weight:800;margin-bottom:4px}
 .profile-subtitle{color:var(--text-2);font-size:13px}
-
 .kbd{display:inline-block;padding:2px 6px;background:var(--bg-3);border:1px solid var(--border-strong);border-radius:4px;font-family:monospace;font-size:11px;color:var(--text-0);min-width:20px;text-align:center}
-
-/* UI Legacy */
 body.ui-legacy{font-family:"Courier New",monospace}
 body.ui-legacy .card{border:1px solid var(--border-strong);backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--bg-1);border-radius:4px}
 body.ui-legacy .btn{border-radius:4px}
@@ -426,22 +331,7 @@ body.ui-legacy .nav-btn svg{display:none}
 body.ui-legacy .card-title{font-family:"Courier New",monospace;letter-spacing:0}
 body.ui-legacy .brand-text{font-family:"Courier New",monospace;background:none;color:var(--accent)}
 body.ui-legacy .page-title{font-family:"Courier New",monospace}
-
-/* Responsive */
-@media(max-width:380px){
-  .page{padding:12px 14px 20px}
-  .page-title{font-size:22px}
-  .stat-value{font-size:24px}
-  .macro-ring-row{grid-template-columns:repeat(2,1fr)}
-  .set-row{grid-template-columns:30px 1fr 1fr 28px}
-  .set-row input:nth-child(4),.set-label:nth-child(4){display:none}
-  .achievement-grid{grid-template-columns:repeat(2,1fr)}
-  .nexuai-title{font-size:22px}
-  .copilot-panel{width:calc(100vw - 32px);right:16px}
-  .bottom-nav{grid-template-columns:repeat(7,1fr)}
-  .nav-btn{font-size:8px;padding:5px 1px}
-  .nav-btn svg{width:18px;height:18px}
-}
+@media(max-width:380px){.page{padding:12px 14px 20px}.page-title{font-size:22px}.stat-value{font-size:24px}.macro-ring-row{grid-template-columns:repeat(2,1fr)}.set-row{grid-template-columns:30px 1fr 1fr 28px}.set-row input:nth-child(4),.set-label:nth-child(4){display:none}.achievement-grid{grid-template-columns:repeat(2,1fr)}.nexuai-title{font-size:22px}.copilot-panel{width:calc(100vw - 32px);right:16px}.bottom-nav{grid-template-columns:repeat(7,1fr)}.nav-btn{font-size:8px;padding:5px 1px}.nav-btn svg{width:18px;height:18px}}
 </style>
 </head>
 <body>
@@ -449,395 +339,377 @@ body.ui-legacy .page-title{font-family:"Courier New",monospace}
 <div class="bg-fx bg-fx-grid"></div>
 <div class="bg-fx bg-fx-scan"></div>
 <canvas id="particlesCanvas"></canvas>
-
 <div class="app" id="app">
-  <header class="topbar">
-    <div class="profile-avatar" id="profileAvatar" title="Profilo">
-      <span class="initial" id="profileInitial">A</span>
-      <div class="edit-overlay">📷</div>
-    </div>
-    <input type="file" id="avatarInput" accept="image/*" class="hidden"/>
-    <div class="brand" style="flex:1;min-width:0"><div class="brand-text">NEXUS FITNESS AI</div></div>
-    <div class="topbar-actions">
-      <button class="icon-btn" id="streakBtn" title="Serie"><span style="font-size:18px">🔥</span></button>
-      <button class="icon-btn" id="kbdBtn" title="Shortcuts"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/></svg></button>
-    </div>
-  </header>
+<header class="topbar">
+<div class="profile-avatar" id="profileAvatar" title="Profilo"><span class="initial" id="profileInitial">A</span><div class="edit-overlay">📷</div></div>
+<input type="file" id="avatarInput" accept="image/*" class="hidden"/>
+<div class="brand" style="flex:1;min-width:0"><div class="brand-text">NEXUS FITNESS AI</div></div>
+<div class="topbar-actions">
+<button class="icon-btn" id="streakBtn" title="Serie"><span style="font-size:18px">🔥</span></button>
+<button class="icon-btn" id="kbdBtn" title="Shortcuts"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/></svg></button>
+</div>
+</header>
 
-  <!-- HOME -->
-  <section class="page active" data-page="home">
-    <div class="hero">
-      <div class="hero-greeting">Bentornato</div>
-      <div class="hero-name" id="heroName">Atleta <span>◆</span></div>
-      <div class="hero-ai-msg"><strong>Nexu-AI:</strong> <span id="heroAiText">Caricamento insight…</span></div>
-    </div>
-    <div class="card mt-16 recovery-card">
-      <div class="recovery-score" id="recoveryScore" style="--pct:0%"><span id="recoveryPct">0</span></div>
-      <div class="recovery-info">
-        <div class="recovery-title">Recovery Score</div>
-        <div class="recovery-detail" id="recoveryDetail">Calcolando…</div>
-      </div>
-    </div>
-    <div class="stat-grid">
-      <div class="stat accent"><div class="stat-label">🔥 Calorie</div><div class="stat-value"><span id="statCalories">0</span><span class="unit">kcal</span></div><div class="stat-bar"><div class="stat-bar-fill" id="barCalories"></div></div></div>
-      <div class="stat red"><div class="stat-label">⚡ Streak</div><div class="stat-value"><span id="statStreak">0</span><span class="unit">gg</span></div><div class="stat-bar"><div class="stat-bar-fill" id="barStreak" style="background:linear-gradient(90deg,var(--red),var(--amber))"></div></div></div>
-      <div class="stat green"><div class="stat-label">💧 Idratazione</div><div class="stat-value"><span id="statHydration">0</span><span class="unit">ml</span></div><div class="stat-bar"><div class="stat-bar-fill" id="barHydration" style="background:linear-gradient(90deg,var(--accent),var(--green))"></div></div></div>
-      <div class="stat amber"><div class="stat-label">⚖️ Peso</div><div class="stat-value"><span id="statWeight">--</span><span class="unit">kg</span></div><div class="stat-bar"><div class="stat-bar-fill" id="barWeight" style="width:50%;background:linear-gradient(90deg,var(--amber),var(--purple))"></div></div></div>
-    </div>
-    <div class="quick-actions">
-      <button class="qa" data-goto="workout"><div class="qa-icon">💪</div><div class="qa-label">Workout</div></button>
-      <button class="qa" data-goto="nutrition"><div class="qa-icon">🥗</div><div class="qa-label">Nutri</div></button>
-      <button class="qa" data-goto="ai"><div class="qa-icon">✨</div><div class="qa-label">AI</div></button>
-      <button class="qa" data-goto="tools"><div class="qa-icon">🧰</div><div class="qa-label">Tools</div></button>
-    </div>
-    <div class="card mt-16 glow">
-      <div class="card-title">💧 Tracker Idratazione</div>
-      <div class="hydration">
-        <div class="hydration-visual" id="hydrationRing" style="--pct:0%"><span id="hydrationPct">0%</span></div>
-        <div class="hydration-info">
-          <div class="label">Obiettivo: <strong id="hydrationGoal">2500</strong> ml</div>
-          <div class="value"><span id="hydrationCurrent">0</span> / <span id="hydrationGoal2">2500</span> ml</div>
-          <div class="hydration-controls">
-            <button class="hydration-btn" data-water="250">+250ml</button>
-            <button class="hydration-btn" data-water="500">+500ml</button>
-            <button class="hydration-btn" data-water="reset">Reset</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mt-16">
-      <div class="card-title">✅ Abitudini Oggi</div>
-      <div id="habitsList"><div class="text-muted text-sm text-center" style="padding:12px 0">Configura in Impostazioni</div></div>
-    </div>
-    <div class="card mt-16">
-      <div class="card-title">🏋️ Ultimo Workout</div>
-      <div id="latestWorkout"><div class="text-muted text-sm">Nessun allenamento.</div></div>
-    </div>
-    <div class="card mt-16">
-      <div class="card-title">📅 Calendario</div>
-      <div class="calendar" id="homeCalendar"></div>
-    </div>
-  </section>
+<section class="page active" data-page="home">
+<div class="hero">
+<div class="hero-greeting">Bentornato</div>
+<div class="hero-name" id="heroName">Atleta <span>◆</span></div>
+<div class="hero-ai-msg"><strong>Nexu-AI:</strong> <span id="heroAiText">Caricamento insight…</span></div>
+</div>
+<div class="card mt-16 recovery-card">
+<div class="recovery-score" id="recoveryScore" style="--pct:0%"><span id="recoveryPct">0</span></div>
+<div class="recovery-info">
+<div class="recovery-title">Recovery Score</div>
+<div class="recovery-detail" id="recoveryDetail">Calcolando…</div>
+</div>
+</div>
+<div class="stat-grid">
+<div class="stat accent"><div class="stat-label">🔥 Calorie</div><div class="stat-value"><span id="statCalories">0</span><span class="unit">kcal</span></div><div class="stat-bar"><div class="stat-bar-fill" id="barCalories"></div></div></div>
+<div class="stat red"><div class="stat-label">⚡ Streak</div><div class="stat-value"><span id="statStreak">0</span><span class="unit">gg</span></div><div class="stat-bar"><div class="stat-bar-fill" id="barStreak" style="background:linear-gradient(90deg,var(--red),var(--amber))"></div></div></div>
+<div class="stat green"><div class="stat-label">💧 Idratazione</div><div class="stat-value"><span id="statHydration">0</span><span class="unit">ml</span></div><div class="stat-bar"><div class="stat-bar-fill" id="barHydration" style="background:linear-gradient(90deg,var(--accent),var(--green))"></div></div></div>
+<div class="stat amber"><div class="stat-label">⚖️ Peso</div><div class="stat-value"><span id="statWeight">--</span><span class="unit">kg</span></div><div class="stat-bar"><div class="stat-bar-fill" id="barWeight" style="width:50%;background:linear-gradient(90deg,var(--amber),var(--purple))"></div></div></div>
+</div>
+<div class="quick-actions">
+<button class="qa" data-goto="workout"><div class="qa-icon">💪</div><div class="qa-label">Workout</div></button>
+<button class="qa" data-goto="nutrition"><div class="qa-icon">🥗</div><div class="qa-label">Nutri</div></button>
+<button class="qa" data-goto="ai"><div class="qa-icon">✨</div><div class="qa-label">AI</div></button>
+<button class="qa" data-goto="tools"><div class="qa-icon">🧰</div><div class="qa-label">Tools</div></button>
+</div>
+<div class="card mt-16 glow">
+<div class="card-title">💧 Tracker Idratazione</div>
+<div class="hydration">
+<div class="hydration-visual" id="hydrationRing" style="--pct:0%"><span id="hydrationPct">0%</span></div>
+<div class="hydration-info">
+<div class="label">Obiettivo: <strong id="hydrationGoal">2500</strong> ml</div>
+<div class="value"><span id="hydrationCurrent">0</span> / <span id="hydrationGoal2">2500</span> ml</div>
+<div class="hydration-controls">
+<button class="hydration-btn" data-water="250">+250ml</button>
+<button class="hydration-btn" data-water="500">+500ml</button>
+<button class="hydration-btn" data-water="reset">Reset</button>
+</div>
+</div>
+</div>
+</div>
+<div class="card mt-16">
+<div class="card-title">✅ Abitudini Oggi</div>
+<div id="habitsList"><div class="text-muted text-sm text-center" style="padding:12px 0">Configura in Impostazioni</div></div>
+</div>
+<div class="card mt-16">
+<div class="card-title">🏋️ Ultimo Workout</div>
+<div id="latestWorkout"><div class="text-muted text-sm">Nessun allenamento.</div></div>
+</div>
+<div class="card mt-16">
+<div class="card-title">📅 Calendario</div>
+<div class="calendar" id="homeCalendar"></div>
+</div>
+</section>
 
-  <!-- NUTRITION -->
-  <section class="page" data-page="nutrition">
-    <h1 class="page-title">Nutrizione</h1>
-    <p class="page-subtitle">Macro, pasti, supplementi & digiuno</p>
-    <div class="macro-ring-row">
-      <div class="macro-ring"><svg class="ring-svg" viewBox="0 0 60 60"><circle class="ring-bg" cx="30" cy="30" r="25"/><circle class="ring-fill" id="ringCalories" cx="30" cy="30" r="25" stroke="var(--accent)" stroke-dasharray="157" stroke-dashoffset="157"/></svg><div class="ring-label">Kcal</div><div class="ring-value" id="macroCalories">0</div></div>
-      <div class="macro-ring"><svg class="ring-svg" viewBox="0 0 60 60"><circle class="ring-bg" cx="30" cy="30" r="25"/><circle class="ring-fill" id="ringProtein" cx="30" cy="30" r="25" stroke="var(--red)" stroke-dasharray="157" stroke-dashoffset="157"/></svg><div class="ring-label">Proteine</div><div class="ring-value" id="macroProtein">0g</div></div>
-      <div class="macro-ring"><svg class="ring-svg" viewBox="0 0 60 60"><circle class="ring-bg" cx="30" cy="30" r="25"/><circle class="ring-fill" id="ringCarbs" cx="30" cy="30" r="25" stroke="var(--amber)" stroke-dasharray="157" stroke-dashoffset="157"/></svg><div class="ring-label">Carbo</div><div class="ring-value" id="macroCarbs">0g</div></div>
-      <div class="macro-ring"><svg class="ring-svg" viewBox="0 0 60 60"><circle class="ring-bg" cx="30" cy="30" r="25"/><circle class="ring-fill" id="ringFats" cx="30" cy="30" r="25" stroke="var(--purple)" stroke-dasharray="157" stroke-dashoffset="157"/></svg><div class="ring-label">Grassi</div><div class="ring-value" id="macroFats">0g</div></div>
-    </div>
-    <div class="fasting-card mt-16">
-      <div class="card-title" style="margin:0">⏱️ Digiuno Intermittente</div>
-      <div class="fasting-timer" id="fastingTimer">00:00:00</div>
-      <div class="fasting-phase" id="fastingPhase">Non in digiuno</div>
-      <div class="flex gap-8 mt-8">
-        <button class="btn btn-ghost btn-sm" id="startFastBtn">▶️ Inizia</button>
-        <button class="btn btn-ghost btn-sm" id="stopFastBtn">⏹️ Stop</button>
-        <select class="select" id="fastingProtocol" style="min-width:90px"><option value="16">16:8</option><option value="18">18:6</option><option value="20">20:4</option><option value="24">OMAD</option></select>
-      </div>
-    </div>
-    <div class="card mt-16">
-      <div class="card-title flex-between"><span>📝 Pasti Oggi</span>
-        <div class="flex gap-8">
-          <button class="btn btn-sm btn-ghost" id="addCheatBtn" style="width:auto;padding:8px 10px;font-size:11px">🍕</button>
-          <button class="btn btn-sm btn-ghost" id="addPresetBtn" style="width:auto;padding:8px 10px;font-size:11px">⚡</button>
-          <button class="btn btn-sm btn-primary" id="addMealBtn" style="width:auto;padding:8px 10px;font-size:11px">+</button>
-        </div>
-      </div>
-      <div id="mealList"><div class="text-muted text-sm text-center" style="padding:20px 0">Nessun pasto</div></div>
-    </div>
-    <div class="card mt-16">
-      <div class="card-title">📊 Split Macro</div>
-      <div id="macroSplitView"><div class="text-muted text-sm text-center" style="padding:8px 0">Inserisci pasti per vedere split</div></div>
-    </div>
-    <div class="card mt-16">
-      <div class="card-title">💊 Supplementi</div>
-      <div id="supplementList"><div class="text-muted text-sm text-center" style="padding:12px 0">Nessun supplemento</div></div>
-      <button class="btn btn-ghost btn-sm mt-8" id="addSupplementBtn">+ Aggiungi</button>
-    </div>
-    <div class="card mt-16">
-      <div class="card-title">🎯 Obiettivi</div>
-      <div class="setting-row"><div><div class="setting-label">Calorie</div></div><input type="number" id="goalCalories" style="width:90px;text-align:right"/></div>
-      <div class="setting-row"><div><div class="setting-label">Proteine (g)</div></div><input type="number" id="goalProtein" style="width:90px;text-align:right"/></div>
-      <div class="setting-row"><div><div class="setting-label">Carboidrati (g)</div></div><input type="number" id="goalCarbs" style="width:90px;text-align:right"/></div>
-      <div class="setting-row"><div><div class="setting-label">Grassi (g)</div></div><input type="number" id="goalFats" style="width:90px;text-align:right"/></div>
-      <button class="btn btn-ghost btn-sm mt-8" id="autoCalcMacrosBtn">🤖 Auto-calcola da profilo</button>
-    </div>
-  </section>
+<section class="page" data-page="nutrition">
+<h1 class="page-title">Nutrizione</h1>
+<p class="page-subtitle">Macro, pasti, supplementi & digiuno</p>
+<div class="macro-ring-row">
+<div class="macro-ring"><svg class="ring-svg" viewBox="0 0 60 60"><circle class="ring-bg" cx="30" cy="30" r="25"/><circle class="ring-fill" id="ringCalories" cx="30" cy="30" r="25" stroke="var(--accent)" stroke-dasharray="157" stroke-dashoffset="157"/></svg><div class="ring-label">Kcal</div><div class="ring-value" id="macroCalories">0</div></div>
+<div class="macro-ring"><svg class="ring-svg" viewBox="0 0 60 60"><circle class="ring-bg" cx="30" cy="30" r="25"/><circle class="ring-fill" id="ringProtein" cx="30" cy="30" r="25" stroke="var(--red)" stroke-dasharray="157" stroke-dashoffset="157"/></svg><div class="ring-label">Proteine</div><div class="ring-value" id="macroProtein">0g</div></div>
+<div class="macro-ring"><svg class="ring-svg" viewBox="0 0 60 60"><circle class="ring-bg" cx="30" cy="30" r="25"/><circle class="ring-fill" id="ringCarbs" cx="30" cy="30" r="25" stroke="var(--amber)" stroke-dasharray="157" stroke-dashoffset="157"/></svg><div class="ring-label">Carbo</div><div class="ring-value" id="macroCarbs">0g</div></div>
+<div class="macro-ring"><svg class="ring-svg" viewBox="0 0 60 60"><circle class="ring-bg" cx="30" cy="30" r="25"/><circle class="ring-fill" id="ringFats" cx="30" cy="30" r="25" stroke="var(--purple)" stroke-dasharray="157" stroke-dashoffset="157"/></svg><div class="ring-label">Grassi</div><div class="ring-value" id="macroFats">0g</div></div>
+</div>
+<div class="fasting-card mt-16">
+<div class="card-title" style="margin:0">⏱️ Digiuno Intermittente</div>
+<div class="fasting-timer" id="fastingTimer">00:00:00</div>
+<div class="fasting-phase" id="fastingPhase">Non in digiuno</div>
+<div class="flex gap-8 mt-8">
+<button class="btn btn-ghost btn-sm" id="startFastBtn">▶️ Inizia</button>
+<button class="btn btn-ghost btn-sm" id="stopFastBtn">⏹️ Stop</button>
+<select class="select" id="fastingProtocol" style="min-width:90px"><option value="16">16:8</option><option value="18">18:6</option><option value="20">20:4</option><option value="24">OMAD</option></select>
+</div>
+</div>
+<div class="card mt-16">
+<div class="card-title flex-between"><span>📝 Pasti Oggi</span>
+<div class="flex gap-8">
+<button class="btn btn-sm btn-ghost" id="addCheatBtn" style="width:auto;padding:8px 10px;font-size:11px">🍕</button>
+<button class="btn btn-sm btn-ghost" id="addPresetBtn" style="width:auto;padding:8px 10px;font-size:11px">⚡</button>
+<button class="btn btn-sm btn-primary" id="addMealBtn" style="width:auto;padding:8px 10px;font-size:11px">+</button>
+</div>
+</div>
+<div id="mealList"><div class="text-muted text-sm text-center" style="padding:20px 0">Nessun pasto</div></div>
+</div>
+<div class="card mt-16">
+<div class="card-title">📊 Split Macro</div>
+<div id="macroSplitView"><div class="text-muted text-sm text-center" style="padding:8px 0">Inserisci pasti per vedere split</div></div>
+</div>
+<div class="card mt-16">
+<div class="card-title">💊 Supplementi</div>
+<div id="supplementList"><div class="text-muted text-sm text-center" style="padding:12px 0">Nessun supplemento</div></div>
+<button class="btn btn-ghost btn-sm mt-8" id="addSupplementBtn">+ Aggiungi</button>
+</div>
+<div class="card mt-16">
+<div class="card-title">🎯 Obiettivi</div>
+<div class="setting-row"><div><div class="setting-label">Calorie</div></div><input type="number" id="goalCalories" style="width:90px;text-align:right"/></div>
+<div class="setting-row"><div><div class="setting-label">Proteine (g)</div></div><input type="number" id="goalProtein" style="width:90px;text-align:right"/></div>
+<div class="setting-row"><div><div class="setting-label">Carboidrati (g)</div></div><input type="number" id="goalCarbs" style="width:90px;text-align:right"/></div>
+<div class="setting-row"><div><div class="setting-label">Grassi (g)</div></div><input type="number" id="goalFats" style="width:90px;text-align:right"/></div>
+<button class="btn btn-ghost btn-sm mt-8" id="autoCalcMacrosBtn">🤖 Auto-calcola da profilo</button>
+</div>
+</section>
 
-  <!-- AI (Nexu-AI) -->
-  <section class="page" data-page="ai">
-    <div class="nexuai-header">
-      <div class="nexuai-logo">
-        <div class="nexuai-logo-icon">
-          <svg viewBox="0 0 24 24" fill="none">
-            <defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#fff" stop-opacity=".6"/></linearGradient></defs>
-            <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="url(#logoGrad)" class="ai-sparkle"/>
-            <circle cx="12" cy="12" r="2" fill="#0a0a0f" opacity=".6"/>
-          </svg>
-        </div>
-        <div>
-          <div class="nexuai-title">NEXU-AI</div>
-          <div class="nexuai-subtitle">Fitness Intelligence System</div>
-        </div>
-      </div>
-      <div class="nexuai-status">Online · Gemini Engine</div>
-    </div>
-    <div class="flex-between" style="margin-bottom:10px">
-      <div class="text-xs text-muted">Modello</div>
-      <button class="icon-btn" id="clearChatBtn" title="Cancella" style="width:32px;height:32px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button>
-    </div>
-    <div class="model-switcher" id="modelSwitcher"></div>
-    <div class="chat-window" id="chatWindow">
-      <div class="msg ai rainbow"><span class="msg-text">👋 Ciao! Sono Nexu-AI, il tuo coach fitness potenziato da Gemini. Chiedimi di allenamento, nutrizione, recupero o ipertrofia. Posso analizzare foto pasti!</span></div>
-    </div>
-    <div class="chat-input-row">
-      <button class="upload-btn" id="uploadBtn" title="Carica foto"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></button>
-      <input type="file" id="fileInput" accept="image/*" class="hidden"/>
-      <textarea class="chat-input" id="chatInput" placeholder="Chiedi a Nexu-AI..." rows="1"></textarea>
-      <button class="send-btn" id="sendBtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
-    </div>
-    <div class="quick-prompts" id="quickPrompts"></div>
-  </section>
+<section class="page" data-page="ai">
+<div class="nexuai-header">
+<div class="nexuai-logo">
+<div class="nexuai-logo-icon">
+<svg viewBox="0 0 24 24" fill="none">
+<defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#fff" stop-opacity=".6"/></linearGradient></defs>
+<path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="url(#logoGrad)" class="ai-sparkle"/>
+<circle cx="12" cy="12" r="2" fill="#0a0a0f" opacity=".6"/>
+</svg>
+</div>
+<div>
+<div class="nexuai-title">NEXU-AI</div>
+<div class="nexuai-subtitle">Fitness Intelligence System</div>
+</div>
+</div>
+<div class="nexuai-status">Online · Gemini Engine</div>
+</div>
+<div class="flex-between" style="margin-bottom:10px">
+<div class="text-xs text-muted">Modello</div>
+<button class="icon-btn" id="clearChatBtn" title="Cancella" style="width:32px;height:32px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button>
+</div>
+<div class="model-switcher" id="modelSwitcher"></div>
+<div class="chat-window" id="chatWindow">
+<div class="msg ai rainbow"><span class="msg-text">👋 Ciao! Sono Nexu-AI, il tuo coach fitness potenziato da Gemini. Chiedimi di allenamento, nutrizione, recupero o ipertrofia. Posso analizzare foto pasti!</span></div>
+</div>
+<div class="chat-input-row">
+<button class="upload-btn" id="uploadBtn" title="Carica foto"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></button>
+<input type="file" id="fileInput" accept="image/*" class="hidden"/>
+<textarea class="chat-input" id="chatInput" placeholder="Chiedi a Nexu-AI..." rows="1"></textarea>
+<button class="send-btn" id="sendBtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
+</div>
+<div class="quick-prompts" id="quickPrompts"></div>
+</section>
 
-  <!-- WORKOUT -->
-  <section class="page" data-page="workout">
-    <div class="flex-between">
-      <div><h1 class="page-title">Workout</h1><p class="page-subtitle" style="margin:0">Serie, RPE, sovraccarico progressivo</p></div>
-      <div class="flex gap-8">
-        <button class="btn btn-sm btn-ghost" id="openTemplatesBtn" style="width:auto;padding:8px 12px;font-size:12px">📋</button>
-        <button class="btn btn-sm btn-ghost" id="openExerciseLibBtn" style="width:auto;padding:8px 12px;font-size:12px">📚</button>
-      </div>
-    </div>
-    <div class="tabs" id="splitTabs">
-      <button class="tab active" data-split="ppl">Push/Pull/Legs</button>
-      <button class="tab" data-split="ul">Upper/Lower</button>
-      <button class="tab" data-split="full">Full Body</button>
-      <button class="tab" data-split="custom">Custom</button>
-    </div>
-    <div class="card">
-      <div class="flex-between">
-        <div class="card-title" style="margin:0"><span id="currentSplitName">Push Day</span> · <span class="text-xs text-muted" id="workoutTimer">00:00</span></div>
-        <div class="flex gap-8">
-          <button class="icon-btn" id="timerBtn" title="Timer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></button>
-          <button class="icon-btn" id="notesSessionBtn" title="Note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></button>
-          <button class="icon-btn" id="finishWorkoutBtn" title="Termina"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></button>
-        </div>
-      </div>
-    </div>
-    <div class="workout-list mt-12" id="exerciseList"></div>
-    <button class="btn btn-primary mt-16" id="addExerciseBtn">+ Aggiungi Esercizio</button>
-    <div class="card mt-16">
-      <div class="card-title">📚 Storico</div>
-      <div id="workoutHistory"><div class="text-muted text-sm text-center" style="padding:12px 0">Nessun allenamento</div></div>
-    </div>
-  </section>
+<section class="page" data-page="workout">
+<div class="flex-between">
+<div><h1 class="page-title">Workout</h1><p class="page-subtitle" style="margin:0">Serie, RPE, sovraccarico progressivo</p></div>
+<div class="flex gap-8">
+<button class="btn btn-sm btn-ghost" id="openTemplatesBtn" style="width:auto;padding:8px 12px;font-size:12px">📋</button>
+<button class="btn btn-sm btn-ghost" id="openExerciseLibBtn" style="width:auto;padding:8px 12px;font-size:12px">📚</button>
+</div>
+</div>
+<div class="tabs" id="splitTabs">
+<button class="tab active" data-split="ppl">Push/Pull/Legs</button>
+<button class="tab" data-split="ul">Upper/Lower</button>
+<button class="tab" data-split="full">Full Body</button>
+<button class="tab" data-split="custom">Custom</button>
+</div>
+<div class="card">
+<div class="flex-between">
+<div class="card-title" style="margin:0"><span id="currentSplitName">Push Day</span> · <span class="text-xs text-muted" id="workoutTimer">00:00</span></div>
+<div class="flex gap-8">
+<button class="icon-btn" id="timerBtn" title="Timer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></button>
+<button class="icon-btn" id="notesSessionBtn" title="Note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></button>
+<button class="icon-btn" id="finishWorkoutBtn" title="Termina"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></button>
+</div>
+</div>
+</div>
+<div class="workout-list mt-12" id="exerciseList"></div>
+<button class="btn btn-primary mt-16" id="addExerciseBtn">+ Aggiungi Esercizio</button>
+<div class="card mt-16">
+<div class="card-title">📚 Storico</div>
+<div id="workoutHistory"><div class="text-muted text-sm text-center" style="padding:12px 0">Nessun allenamento</div></div>
+</div>
+</section>
 
-  <!-- BODY (NEW) -->
-  <section class="page" data-page="body">
-    <h1 class="page-title">Corpo</h1>
-    <p class="page-subtitle">Peso, Body Fat, Misure e Progressi</p>
-    <div class="card">
-      <div class="card-title">📊 Metriche Attuali</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <div class="body-metric-card">
-          <div class="body-metric-icon">⚖️</div>
-          <div class="body-metric-info">
-            <div class="body-metric-label">Peso</div>
-            <div class="body-metric-value"><span id="bodyCurrentWeight">--</span> kg</div>
-            <div class="body-metric-trend" id="bodyWeightTrend">-</div>
-          </div>
-        </div>
-        <div class="body-metric-card">
-          <div class="body-metric-icon">📊</div>
-          <div class="body-metric-info">
-            <div class="body-metric-label">Body Fat</div>
-            <div class="body-metric-value"><span id="bodyCurrentBF">--</span>%</div>
-            <div class="body-metric-trend" id="bodyBFTrend">-</div>
-          </div>
-        </div>
-        <div class="body-metric-card">
-          <div class="body-metric-icon">💪</div>
-          <div class="body-metric-info">
-            <div class="body-metric-label">Massa Magra</div>
-            <div class="body-metric-value"><span id="bodyLeanMass">--</span> kg</div>
-          </div>
-        </div>
-        <div class="body-metric-card">
-          <div class="body-metric-icon">🔥</div>
-          <div class="body-metric-info">
-            <div class="body-metric-label">Massa Grassa</div>
-            <div class="body-metric-value"><span id="bodyFatMass">--</span> kg</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mt-12">
-      <div class="card-title">➕ Registra Dati</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-        <div><label class="text-xs text-muted">Peso (kg)</label><input type="number" step="0.1" id="weightInput" placeholder="75.5" style="margin-top:4px"/></div>
-        <div><label class="text-xs text-muted">Body Fat %</label><input type="number" step="0.1" id="bfInput" placeholder="15.0" style="margin-top:4px"/></div>
-      </div>
-      <button class="btn btn-primary mt-12" id="logBodyBtn">💾 Salva</button>
-    </div>
-    <div class="chart-wrap mt-16"><div class="card-title">📈 Trend Peso</div><canvas id="chartBodyWeight"></canvas></div>
-    <div class="chart-wrap"><div class="card-title">📊 Trend Body Fat</div><canvas id="chartBodyBF"></canvas></div>
-    <div class="card mt-16">
-      <div class="card-title flex-between"><span>📏 Misure Corpo</span><button class="btn btn-sm btn-ghost" id="addMeasurementsBtn" style="width:auto;padding:8px 12px;font-size:12px">+</button></div>
-      <div id="measurementsHistory"><div class="text-muted text-sm text-center" style="padding:12px 0">Nessuna misura</div></div>
-    </div>
-    <div class="card mt-16">
-      <div class="card-title">📸 Foto Progresso</div>
-      <div class="text-sm text-muted" style="margin-bottom:10px">Scatta e archivia foto mensili del tuo percorso.</div>
-      <button class="btn btn-ghost" id="addPhotoBtn">📷 Aggiungi Foto</button>
-      <input type="file" id="photoInput" accept="image/*" class="hidden"/>
-      <div id="photoGallery" style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px"></div>
-    </div>
-  </section>
+<section class="page" data-page="body">
+<h1 class="page-title">Corpo</h1>
+<p class="page-subtitle">Peso, Body Fat, Misure e Progressi</p>
+<div class="card">
+<div class="card-title">📊 Metriche Attuali</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div class="body-metric-card">
+<div class="body-metric-icon">⚖️</div>
+<div class="body-metric-info">
+<div class="body-metric-label">Peso</div>
+<div class="body-metric-value"><span id="bodyCurrentWeight">--</span> kg</div>
+<div class="body-metric-trend" id="bodyWeightTrend">-</div>
+</div>
+</div>
+<div class="body-metric-card">
+<div class="body-metric-icon">📊</div>
+<div class="body-metric-info">
+<div class="body-metric-label">Body Fat</div>
+<div class="body-metric-value"><span id="bodyCurrentBF">--</span>%</div>
+<div class="body-metric-trend" id="bodyBFTrend">-</div>
+</div>
+</div>
+<div class="body-metric-card">
+<div class="body-metric-icon">💪</div>
+<div class="body-metric-info">
+<div class="body-metric-label">Massa Magra</div>
+<div class="body-metric-value"><span id="bodyLeanMass">--</span> kg</div>
+</div>
+</div>
+<div class="body-metric-card">
+<div class="body-metric-icon">🔥</div>
+<div class="body-metric-info">
+<div class="body-metric-label">Massa Grassa</div>
+<div class="body-metric-value"><span id="bodyFatMass">--</span> kg</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card mt-12">
+<div class="card-title">➕ Registra Dati</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<div><label class="text-xs text-muted">Peso (kg)</label><input type="number" step="0.1" id="weightInput" placeholder="75.5" style="margin-top:4px"/></div>
+<div><label class="text-xs text-muted">Body Fat %</label><input type="number" step="0.1" id="bfInput" placeholder="15.0" style="margin-top:4px"/></div>
+</div>
+<button class="btn btn-primary mt-12" id="logBodyBtn">💾 Salva</button>
+</div>
+<div class="chart-wrap mt-16"><div class="card-title">📈 Trend Peso</div><canvas id="chartBodyWeight"></canvas></div>
+<div class="chart-wrap"><div class="card-title">📊 Trend Body Fat</div><canvas id="chartBodyBF"></canvas></div>
+<div class="card mt-16">
+<div class="card-title flex-between"><span>📏 Misure Corpo</span><button class="btn btn-sm btn-ghost" id="addMeasurementsBtn" style="width:auto;padding:8px 12px;font-size:12px">+</button></div>
+<div id="measurementsHistory"><div class="text-muted text-sm text-center" style="padding:12px 0">Nessuna misura</div></div>
+</div>
+<div class="card mt-16">
+<div class="card-title">📸 Foto Progresso</div>
+<div class="text-sm text-muted" style="margin-bottom:10px">Scatta e archivia foto mensili del tuo percorso.</div>
+<button class="btn btn-ghost" id="addPhotoBtn">📷 Aggiungi Foto</button>
+<input type="file" id="photoInput" accept="image/*" class="hidden"/>
+<div id="photoGallery" style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px"></div>
+</div>
+</section>
 
-  <!-- TOOLS -->
-  <section class="page" data-page="tools">
-    <h1 class="page-title">Strumenti</h1>
-    <p class="page-subtitle">Calcolatori e analitica avanzata</p>
-    <div class="tool-grid">
-      <div class="tool-card" data-tool="tdee"><div class="tool-card-title">⚖️ TDEE</div><div class="tool-card-desc">Fabbisogno</div></div>
-      <div class="tool-card" data-tool="orm"><div class="tool-card-title">🏋️ 1RM</div><div class="tool-card-desc">Massimale</div></div>
-      <div class="tool-card" data-tool="bodyfat"><div class="tool-card-title">📊 BF</div><div class="tool-card-desc">Stima %</div></div>
-      <div class="tool-card" data-tool="macros"><div class="tool-card-title">🥗 Macro</div><div class="tool-card-desc">Split</div></div>
-      <div class="tool-card" data-tool="water"><div class="tool-card-title">💧 Water</div><div class="tool-card-desc">Fabbisogno</div></div>
-      <div class="tool-card" data-tool="rest"><div class="tool-card-title">⏱️ Rest</div><div class="tool-card-desc">Ottimale</div></div>
-      <div class="tool-card" data-tool="muscle"><div class="tool-card-title">💪 Muscle</div><div class="tool-card-desc">Volume</div></div>
-      <div class="tool-card" data-tool="deload"><div class="tool-card-title">📉 Deload</div><div class="tool-card-desc">Scarico</div></div>
-      <div class="tool-card" data-tool="hr"><div class="tool-card-title">❤️ HR</div><div class="tool-card-desc">Zone</div></div>
-      <div class="tool-card" data-tool="pump"><div class="tool-card-title">🔥 Pump</div><div class="tool-card-desc">Protocolli</div></div>
-      <div class="tool-card" data-tool="achievements"><div class="tool-card-title">🎖️ Achieve.</div><div class="tool-card-desc">Badge</div></div>
-      <div class="tool-card" data-tool="sleep"><div class="tool-card-title">😴 Sonno</div><div class="tool-card-desc">Tracker</div></div>
-      <div class="tool-card" data-tool="calendar"><div class="tool-card-title">📅 Calendar</div><div class="tool-card-desc">Mensile</div></div>
-      <div class="tool-card" data-tool="report"><div class="tool-card-title">📊 Report</div><div class="tool-card-desc">Weekly</div></div>
-      <div class="tool-card" data-tool="library"><div class="tool-card-title">📚 Library</div><div class="tool-card-desc">60+ ex</div></div>
-      <div class="tool-card" data-tool="rmcalc"><div class="tool-card-title">🧮 %RM</div><div class="tool-card-desc">Da 1RM</div></div>
-    </div>
-  </section>
+<section class="page" data-page="tools">
+<h1 class="page-title">Strumenti</h1>
+<p class="page-subtitle">Calcolatori e analitica avanzata</p>
+<div class="tool-grid">
+<div class="tool-card" data-tool="tdee"><div class="tool-card-title">⚖️ TDEE</div><div class="tool-card-desc">Fabbisogno</div></div>
+<div class="tool-card" data-tool="orm"><div class="tool-card-title">🏋️ 1RM</div><div class="tool-card-desc">Massimale</div></div>
+<div class="tool-card" data-tool="bodyfat"><div class="tool-card-title">📊 BF</div><div class="tool-card-desc">Stima %</div></div>
+<div class="tool-card" data-tool="macros"><div class="tool-card-title">🥗 Macro</div><div class="tool-card-desc">Split</div></div>
+<div class="tool-card" data-tool="water"><div class="tool-card-title">💧 Water</div><div class="tool-card-desc">Fabbisogno</div></div>
+<div class="tool-card" data-tool="rest"><div class="tool-card-title">⏱️ Rest</div><div class="tool-card-desc">Ottimale</div></div>
+<div class="tool-card" data-tool="muscle"><div class="tool-card-title">💪 Muscle</div><div class="tool-card-desc">Volume</div></div>
+<div class="tool-card" data-tool="deload"><div class="tool-card-title">📉 Deload</div><div class="tool-card-desc">Scarico</div></div>
+<div class="tool-card" data-tool="hr"><div class="tool-card-title">❤️ HR</div><div class="tool-card-desc">Zone</div></div>
+<div class="tool-card" data-tool="pump"><div class="tool-card-title">🔥 Pump</div><div class="tool-card-desc">Protocolli</div></div>
+<div class="tool-card" data-tool="achievements"><div class="tool-card-title">🎖️ Achieve.</div><div class="tool-card-desc">Badge</div></div>
+<div class="tool-card" data-tool="sleep"><div class="tool-card-title">😴 Sonno</div><div class="tool-card-desc">Tracker</div></div>
+<div class="tool-card" data-tool="calendar"><div class="tool-card-title">📅 Calendar</div><div class="tool-card-desc">Mensile</div></div>
+<div class="tool-card" data-tool="report"><div class="tool-card-title">📊 Report</div><div class="tool-card-desc">Weekly</div></div>
+<div class="tool-card" data-tool="library"><div class="tool-card-title">📚 Library</div><div class="tool-card-desc">60+ ex</div></div>
+<div class="tool-card" data-tool="rmcalc"><div class="tool-card-title">🧮 %RM</div><div class="tool-card-desc">Da 1RM</div></div>
+</div>
+</section>
 
-  <!-- PROGRESS -->
-  <section class="page" data-page="progress">
-    <h1 class="page-title">Progressi</h1>
-    <p class="page-subtitle">Insight AI e analitica</p>
-    <div class="card"><div class="card-title">🧠 Insight AI</div><div id="insightsList"></div></div>
-    <div class="chart-wrap mt-16"><div class="card-title">📈 Volume</div><canvas id="chartVolume"></canvas></div>
-    <div class="chart-wrap"><div class="card-title">🔥 Calorie</div><canvas id="chartCalories"></canvas></div>
-    <div class="chart-wrap"><div class="card-title">💤 Sonno</div><canvas id="chartSleep"></canvas></div>
-  </section>
+<section class="page" data-page="progress">
+<h1 class="page-title">Progressi</h1>
+<p class="page-subtitle">Insight AI e analitica</p>
+<div class="card"><div class="card-title">🧠 Insight AI</div><div id="insightsList"></div></div>
+<div class="chart-wrap mt-16"><div class="card-title">📈 Volume</div><canvas id="chartVolume"></canvas></div>
+<div class="chart-wrap"><div class="card-title">🔥 Calorie</div><canvas id="chartCalories"></canvas></div>
+<div class="chart-wrap"><div class="card-title">💤 Sonno</div><canvas id="chartSleep"></canvas></div>
+</section>
 
-  <!-- SETTINGS -->
-  <section class="page" data-page="settings">
-    <h1 class="page-title">Impostazioni</h1>
-    <p class="page-subtitle">AI, UI, profilo e backup</p>
+<section class="page" data-page="settings">
+<h1 class="page-title">Impostazioni</h1>
+<p class="page-subtitle">AI, UI, profilo e backup</p>
+<div class="card">
+<div class="setting-group">
+<div class="setting-group-title">👤 Profilo Utente</div>
+<button class="btn btn-ghost" id="openProfileBtn">📋 Modifica Profilo Completo</button>
+</div>
+</div>
+<div class="card mt-12">
+<div class="setting-group">
+<div class="setting-group-title">🤖 Google AI Studio</div>
+<div class="setting-row" style="flex-direction:column;align-items:stretch;gap:8px"><div><div class="setting-label">API Key Gemini</div><div class="setting-desc">Da aistudio.google.com</div></div><input type="password" id="apiKeyInput" placeholder="AIza..." autocomplete="off"/></div>
+</div>
+</div>
+<div class="card mt-12">
+<div class="setting-group">
+<div class="setting-group-title">🎨 Temi</div>
+<div class="theme-grid" id="themeGrid">
+<div class="theme-card theme-dark active" data-theme="default"><div class="theme-card-name">Default</div><div class="theme-card-desc">Scuro cyber</div></div>
+<div class="theme-card theme-neon" data-theme="neon"><div class="theme-card-name">Neon Rainbow</div><div class="theme-card-desc">Fluo animato</div></div>
+<div class="theme-card theme-fluo" data-theme="fluo"><div class="theme-card-name">Fluo Green</div><div class="theme-card-desc">Verde acido</div></div>
+<div class="theme-card theme-intel" data-theme="intel"><div class="theme-card-name">Intel Blue</div><div class="theme-card-desc">Tech blue</div></div>
+<div class="theme-card theme-nasa" data-theme="nasa"><div class="theme-card-name">NASA</div><div class="theme-card-desc">Space</div></div>
+</div>
+<div class="setting-row mt-12"><div><div class="setting-label">🕹️ UI Legacy</div><div class="setting-desc">Terminale classico</div></div><div class="toggle" id="toggleLegacy"></div></div>
+</div>
+</div>
+<div class="card mt-12">
+<div class="setting-group">
+<div class="setting-group-title">✨ Effetti</div>
+<div class="setting-row"><div><div class="setting-label">🌈 Arcobaleno AI</div></div><div class="toggle" id="toggleRainbow"></div></div>
+<div class="setting-row"><div><div class="setting-label">🎨 Colore</div></div><div class="color-swatches" id="colorSwatches">
+<div class="color-swatch" data-color="blue" style="background:#00d4ff;color:#00d4ff"></div>
+<div class="color-swatch" data-color="purple" style="background:#a855f7;color:#a855f7"></div>
+<div class="color-swatch" data-color="pink" style="background:#ff0080;color:#ff0080"></div>
+<div class="color-swatch" data-color="green" style="background:#22e39a;color:#22e39a"></div>
+<div class="color-swatch" data-color="red" style="background:#ff3355;color:#ff3355"></div>
+<div class="color-swatch" data-color="amber" style="background:#ffb547;color:#ffb547"></div>
+</div></div>
+<div class="setting-row"><div><div class="setting-label">💡 Glow</div></div><select class="select" id="selectGlow"><option value="0">Off</option><option value="0.5">Basso</option><option value="1" selected>Medio</option><option value="2">Alto</option><option value="3">Ultra</option></select></div>
+<div class="setting-row"><div><div class="setting-label">⚡ Animazioni</div></div><select class="select" id="selectAnim"><option value="0.5">Lenta</option><option value="1" selected>Normale</option><option value="1.8">Veloce</option><option value="3">Ultra</option></select></div>
+<div class="setting-row"><div><div class="setting-label">🔤 Font</div></div><input type="range" class="range-input" id="fontScaleRange" min="0.85" max="1.3" step="0.05" value="1" style="width:120px"/></div>
+<div class="setting-row"><div><div class="setting-label">🔲 Griglia</div></div><div class="toggle" id="toggleGrid"></div></div>
+<div class="setting-row"><div><div class="setting-label">📺 Scan</div></div><div class="toggle" id="toggleScan"></div></div>
+<div class="setting-row"><div><div class="setting-label">✨ Particelle</div></div><div class="toggle" id="toggleParticles"></div></div>
+<div class="setting-row"><div><div class="setting-label">🌊 Sfondo</div></div><div class="toggle" id="toggleBgAnim"></div></div>
+<div class="setting-row"><div><div class="setting-label">🪟 Vetro</div></div><div class="toggle" id="toggleGlass"></div></div>
+<div class="setting-row"><div><div class="setting-label">🌈 Holo</div></div><div class="toggle" id="toggleHolo"></div></div>
+<div class="setting-row"><div><div class="setting-label">💬 Stile Msg</div></div><select class="select" id="selectMsgStyle"><option value="rounded" selected>Arrotondati</option><option value="soft">Morbidi</option><option value="sharp">Squadrati</option></select></div>
+<div class="setting-row"><div><div class="setting-label">📳 Haptic</div></div><div class="toggle" id="toggleHaptic"></div></div>
+<div class="setting-row"><div><div class="setting-label">♿ Riduci Motion</div></div><div class="toggle" id="toggleReduceMotion"></div></div>
+<button class="btn btn-ghost mt-12" id="resetEffectsBtn">🔄 Reset</button>
+</div>
+</div>
+<div class="card mt-12">
+<div class="setting-group">
+<div class="setting-group-title">✅ Abitudini Giornaliere</div>
+<div id="habitsConfig"><div class="text-muted text-sm text-center" style="padding:12px 0">Nessuna abitudine</div></div>
+<button class="btn btn-ghost btn-sm mt-8" id="addHabitBtn">+ Aggiungi Abitudine</button>
+</div>
+</div>
+<div class="card mt-12">
+<div class="setting-group">
+<div class="setting-group-title">💾 Backup Completo</div>
+<div class="text-sm text-muted" style="margin-bottom:10px;line-height:1.5">Salva e ripristina TUTTI i dati: profilo, workout, calorie, sonno, API key, impostazioni, peso, body fat, achievements.</div>
+<button class="btn btn-ghost" id="exportBtn">📤 Esporta Backup JSON</button>
+<button class="btn btn-ghost mt-8" id="importBtn">📥 Importa Backup</button>
+<input type="file" id="importFileInput" accept=".json" class="hidden"/>
+<div class="text-xs text-muted mt-8" id="backupInfo">Ultimo backup: mai</div>
+<button class="btn btn-danger mt-8" id="resetBtn">⚠️ Reset Tutti i Dati</button>
+</div>
+</div>
+<div class="version-tag">NEXUS FITNESS AI · v33.101.8081 · 7.1 Stable · NEXU-AI Engine</div>
+</section>
 
-    <div class="card">
-      <div class="setting-group">
-        <div class="setting-group-title">👤 Profilo Utente</div>
-        <button class="btn btn-ghost" id="openProfileBtn">📋 Modifica Profilo Completo</button>
-      </div>
-    </div>
-
-    <div class="card mt-12">
-      <div class="setting-group">
-        <div class="setting-group-title">🤖 Google AI Studio</div>
-        <div class="setting-row" style="flex-direction:column;align-items:stretch;gap:8px"><div><div class="setting-label">API Key Gemini</div><div class="setting-desc">Da aistudio.google.com</div></div><input type="password" id="apiKeyInput" placeholder="AIza..." autocomplete="off"/></div>
-      </div>
-    </div>
-
-    <div class="card mt-12">
-      <div class="setting-group">
-        <div class="setting-group-title">🎨 Temi</div>
-        <div class="theme-grid" id="themeGrid">
-          <div class="theme-card theme-dark active" data-theme="default"><div class="theme-card-name">Default</div><div class="theme-card-desc">Scuro cyber</div></div>
-          <div class="theme-card theme-neon" data-theme="neon"><div class="theme-card-name">Neon Rainbow</div><div class="theme-card-desc">Fluo animato</div></div>
-          <div class="theme-card theme-fluo" data-theme="fluo"><div class="theme-card-name">Fluo Green</div><div class="theme-card-desc">Verde acido</div></div>
-          <div class="theme-card theme-intel" data-theme="intel"><div class="theme-card-name">Intel Blue</div><div class="theme-card-desc">Tech blue</div></div>
-          <div class="theme-card theme-nasa" data-theme="nasa"><div class="theme-card-name">NASA</div><div class="theme-card-desc">Space</div></div>
-        </div>
-        <div class="setting-row mt-12"><div><div class="setting-label">🕹️ UI Legacy</div><div class="setting-desc">Terminale classico</div></div><div class="toggle" id="toggleLegacy"></div></div>
-      </div>
-    </div>
-
-    <div class="card mt-12">
-      <div class="setting-group">
-        <div class="setting-group-title">✨ Effetti</div>
-        <div class="setting-row"><div><div class="setting-label">🌈 Arcobaleno AI</div></div><div class="toggle" id="toggleRainbow"></div></div>
-        <div class="setting-row"><div><div class="setting-label">🎨 Colore</div></div><div class="color-swatches" id="colorSwatches">
-          <div class="color-swatch" data-color="blue" style="background:#00d4ff;color:#00d4ff"></div>
-          <div class="color-swatch" data-color="purple" style="background:#a855f7;color:#a855f7"></div>
-          <div class="color-swatch" data-color="pink" style="background:#ff0080;color:#ff0080"></div>
-          <div class="color-swatch" data-color="green" style="background:#22e39a;color:#22e39a"></div>
-          <div class="color-swatch" data-color="red" style="background:#ff3355;color:#ff3355"></div>
-          <div class="color-swatch" data-color="amber" style="background:#ffb547;color:#ffb547"></div>
-        </div></div>
-        <div class="setting-row"><div><div class="setting-label">💡 Glow</div></div><select class="select" id="selectGlow"><option value="0">Off</option><option value="0.5">Basso</option><option value="1" selected>Medio</option><option value="2">Alto</option><option value="3">Ultra</option></select></div>
-        <div class="setting-row"><div><div class="setting-label">⚡ Animazioni</div></div><select class="select" id="selectAnim"><option value="0.5">Lenta</option><option value="1" selected>Normale</option><option value="1.8">Veloce</option><option value="3">Ultra</option></select></div>
-        <div class="setting-row"><div><div class="setting-label">🔤 Font</div></div><input type="range" class="range-input" id="fontScaleRange" min="0.85" max="1.3" step="0.05" value="1" style="width:120px"/></div>
-        <div class="setting-row"><div><div class="setting-label">🔲 Griglia</div></div><div class="toggle" id="toggleGrid"></div></div>
-        <div class="setting-row"><div><div class="setting-label">📺 Scan</div></div><div class="toggle" id="toggleScan"></div></div>
-        <div class="setting-row"><div><div class="setting-label">✨ Particelle</div></div><div class="toggle" id="toggleParticles"></div></div>
-        <div class="setting-row"><div><div class="setting-label">🌊 Sfondo</div></div><div class="toggle" id="toggleBgAnim"></div></div>
-        <div class="setting-row"><div><div class="setting-label">🪟 Vetro</div></div><div class="toggle" id="toggleGlass"></div></div>
-        <div class="setting-row"><div><div class="setting-label">🌈 Holo</div></div><div class="toggle" id="toggleHolo"></div></div>
-        <div class="setting-row"><div><div class="setting-label">💬 Stile Msg</div></div><select class="select" id="selectMsgStyle"><option value="rounded" selected>Arrotondati</option><option value="soft">Morbidi</option><option value="sharp">Squadrati</option></select></div>
-        <div class="setting-row"><div><div class="setting-label">📳 Haptic</div></div><div class="toggle" id="toggleHaptic"></div></div>
-        <div class="setting-row"><div><div class="setting-label">♿ Riduci Motion</div></div><div class="toggle" id="toggleReduceMotion"></div></div>
-        <button class="btn btn-ghost mt-12" id="resetEffectsBtn">🔄 Reset</button>
-      </div>
-    </div>
-
-    <div class="card mt-12">
-      <div class="setting-group">
-        <div class="setting-group-title">✅ Abitudini Giornaliere</div>
-        <div id="habitsConfig"><div class="text-muted text-sm text-center" style="padding:12px 0">Nessuna abitudine</div></div>
-        <button class="btn btn-ghost btn-sm mt-8" id="addHabitBtn">+ Aggiungi Abitudine</button>
-      </div>
-    </div>
-
-    <div class="card mt-12">
-      <div class="setting-group">
-        <div class="setting-group-title">💾 Backup Completo</div>
-        <div class="text-sm text-muted" style="margin-bottom:10px;line-height:1.5">Salva e ripristina TUTTI i dati: profilo, workout, calorie, sonno, API key, impostazioni, peso, body fat, achievements.</div>
-        <button class="btn btn-ghost" id="exportBtn">📤 Esporta Backup JSON</button>
-        <button class="btn btn-ghost mt-8" id="importBtn">📥 Importa Backup</button>
-        <input type="file" id="importFileInput" accept=".json" class="hidden"/>
-        <div class="text-xs text-muted mt-8" id="backupInfo">Ultimo backup: mai</div>
-        <button class="btn btn-danger mt-8" id="resetBtn">⚠️ Reset Tutti i Dati</button>
-      </div>
-    </div>
-    <div class="version-tag">NEXUS FITNESS AI · v33.101.8081 · 7.1 Stable · NEXU-AI Engine</div>
-  </section>
-
-  <nav class="bottom-nav">
-    <button class="nav-btn active" data-page="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></button>
-    <button class="nav-btn" data-page="nutrition"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" y1="17" x2="18" y2="17"/></svg><span>Nutri</span></button>
-    <button class="nav-btn" data-page="ai"><span class="ai-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="var(--bg-0)" opacity=".4"/></svg></span><span>AI</span></button>
-    <button class="nav-btn" data-page="workout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 17.5 17.5"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/></svg><span>Work</span></button>
-    <button class="nav-btn" data-page="body"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><path d="M12 8v8M8 12h8M9 22l3-6 3 6"/></svg><span>Body</span></button>
-    <button class="nav-btn" data-page="tools"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><span>Tools</span></button>
-    <button class="nav-btn" data-page="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Set</span></button>
-  </nav>
+<nav class="bottom-nav">
+<button class="nav-btn active" data-page="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></button>
+<button class="nav-btn" data-page="nutrition"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" y1="17" x2="18" y2="17"/></svg><span>Nutri</span></button>
+<button class="nav-btn" data-page="ai"><span class="ai-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="var(--bg-0)" opacity=".4"/></svg></span><span>AI</span></button>
+<button class="nav-btn" data-page="workout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 17.5 17.5"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/></svg><span>Work</span></button>
+<button class="nav-btn" data-page="body"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><path d="M12 8v8M8 12h8M9 22l3-6 3 6"/></svg><span>Body</span></button>
+<button class="nav-btn" data-page="tools"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><span>Tools</span></button>
+<button class="nav-btn" data-page="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Set</span></button>
+</nav>
 </div>
 
 <button class="copilot-fab" id="copilotFab" title="Nexu-AI">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="currentColor"/></svg>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="currentColor"/></svg>
 </button>
 <div class="copilot-panel" id="copilotPanel">
-  <div class="copilot-panel-title">⚡ Quick Actions</div>
-  <div class="copilot-quick">
-    <button class="copilot-quick-btn" data-cp="Cosa allenare oggi?">💪 Cosa allenare?</button>
-    <button class="copilot-quick-btn" data-cp="Dammi un workout 30min">⏱️ Workout 30min</button>
-    <button class="copilot-quick-btn" data-cp="Cosa mangiare ora?">🍽️ Cosa mangiare?</button>
-    <button class="copilot-quick-btn" data-cp="Come migliorare recupero?">😴 Recupero</button>
-    <button class="copilot-quick-btn" data-cp-open="ai">💬 Chat completa</button>
-  </div>
+<div class="copilot-panel-title">⚡ Quick Actions</div>
+<div class="copilot-quick">
+<button class="copilot-quick-btn" data-cp="Cosa allenare oggi?">💪 Cosa allenare?</button>
+<button class="copilot-quick-btn" data-cp="Dammi un workout 30min">⏱️ Workout 30min</button>
+<button class="copilot-quick-btn" data-cp="Cosa mangiare ora?">🍽️ Cosa mangiare?</button>
+<button class="copilot-quick-btn" data-cp="Come migliorare recupero?">😴 Recupero</button>
+<button class="copilot-quick-btn" data-cp-open="ai">💬 Chat completa</button>
+</div>
 </div>
 
 <div class="modal-backdrop" id="modalBackdrop"><div class="modal" id="modalContent"></div></div>
@@ -847,10 +719,6 @@ body.ui-legacy .page-title{font-family:"Courier New",monospace}
 <script>
 'use strict';
 
-/* =========================================================
-   NEXUS FITNESS AI v33.101.8081 — 7.1 STABLE
-   Ultra-optimized release with full backup system
-   ========================================================= */
 const APP_VERSION = '33.101.8081';
 const APP_NAME = 'NEXUS Fitness AI 7.1 Stable';
 const STORAGE_KEY = 'nexus_fitness_ai_v33';
@@ -1062,9 +930,6 @@ const DEFAULT_STATE = {
   meta: { lastBackup: null, createdAt: null, version: APP_VERSION }
 };
 
-/* =========================================================
-   STORE
-   ========================================================= */
 const Store = {
   _state: null, _timer: null,
   load() {
@@ -1103,10 +968,7 @@ const Store = {
     }
     return target;
   },
-
-  /* ===== FULL BACKUP SYSTEM ===== */
   _computeChecksum(data) {
-    // Simple hash for integrity check
     const str = JSON.stringify(data);
     let hash = 0;
     for (let i = 0; i < str.length; i++) {
@@ -1116,7 +978,6 @@ const Store = {
     }
     return hash.toString(16);
   },
-
   exportJSON() {
     const state = this._state;
     const backup = {
@@ -1141,7 +1002,6 @@ const Store = {
     Toast.show('✓ Backup completo esportato', 'success');
     Haptic.success();
   },
-
   importJSON(file) {
     const reader = new FileReader();
     reader.onload = (e) => {
@@ -1149,14 +1009,12 @@ const Store = {
         const backup = JSON.parse(e.target.result);
         if (!backup.version || !backup.data) throw new Error('Formato backup non valido');
         if (backup.version > BACKUP_VERSION) throw new Error('Backup da versione futura');
-        // Verify checksum
         if (backup.checksum) {
           const expected = this._computeChecksum(backup.data);
           if (backup.checksum !== expected) {
             if (!confirm('⚠️ Checksum non corrisponde. Il file potrebbe essere corrotto. Continuare?')) return;
           }
         }
-        // Merge with defaults for forward compatibility
         this._state = this._deepMerge(structuredClone(DEFAULT_STATE), backup.data);
         this.save(true);
         App.refreshAll();
@@ -1171,7 +1029,6 @@ const Store = {
     };
     reader.readAsText(file);
   },
-
   reset() {
     this._state = structuredClone(DEFAULT_STATE);
     this._state.profile.createdAt = Date.now();
@@ -1183,9 +1040,6 @@ const Store = {
   }
 };
 
-/* =========================================================
-   UTILS (optimized with debounce & memoize)
-   ========================================================= */
 const U = {
   today() {
     const d = new Date();
@@ -1398,17 +1252,12 @@ const Particles = {
   }
 };
 
-/* =========================================================
-   RECOVERY SCORE CALCULATOR
-   ========================================================= */
 const Recovery = {
   calculate() {
     const state = Store.state;
     const today = U.today();
     let score = 100;
     const factors = [];
-
-    // Sleep (last night)
     const sleepLog = state.progress.sleepLog || [];
     const lastSleep = sleepLog.length ? sleepLog[sleepLog.length - 1] : null;
     if (lastSleep) {
@@ -1417,46 +1266,33 @@ const Recovery = {
       else if (lastSleep.hours >= 7 && lastSleep.hours <= 9) factors.push('✅ Sonno ottimo');
       if (lastSleep.quality < 6) { score -= 10; factors.push('😕 Qualità sonno bassa'); }
     } else factors.push('⚠️ Nessun dato sonno');
-
-    // Hydration
     const hydration = state.nutrition.days[today]?.hydration || 0;
     const hGoal = state.profile.hydrationGoal || 2500;
     const hPct = (hydration / hGoal) * 100;
     if (hPct < 50) { score -= 15; factors.push('💧 Disidratato'); }
     else if (hPct < 80) { score -= 5; factors.push('💧 Idratazione media'); }
     else factors.push('✅ Ben idratato');
-
-    // Calories (yesterday)
     const yesterday = state.nutrition.days[U.daysAgo(1)];
     if (yesterday?.calories) {
       const cPct = (yesterday.calories / state.nutrition.goals.calories) * 100;
       if (cPct < 70) { score -= 15; factors.push('🍽️ Sotto-alimentato ieri'); }
       else if (cPct >= 90 && cPct <= 110) factors.push('✅ Nutrizione on-target');
     }
-
-    // Recent workout load
     const recentWorkouts = state.workout.history.slice(-3);
     const totalRecentVolume = recentWorkouts.reduce((a, w) =>
       a + (w.exercises || []).reduce((b, e) => b + (e.sets || []).reduce((c, s) => c + (s.weight || 0) * (s.reps || 0), 0), 0), 0);
     if (totalRecentVolume > 30000) { score -= 10; factors.push('🏋️ Alto volume recente'); }
-
-    // Streak bonus
     if ((state.progress.streak || 0) >= 7) score = Math.min(100, score + 5);
-
     score = U.clamp(score, 0, 100);
     return { score, factors };
   }
 };
 
-/* =========================================================
-   HOME PAGE
-   ========================================================= */
 const HomePage = {
   refresh() {
     const state = Store.state;
     const today = U.today();
     const dayData = state.nutrition.days[today] || { calories: 0, hydration: 0, meals: [] };
-
     document.getElementById('heroName').innerHTML = `${U.esc(state.profile.name || 'Atleta')} <span>◆</span>`;
     U.animate(document.getElementById('statCalories'), dayData.calories || 0);
     U.animate(document.getElementById('statStreak'), state.progress.streak || 0);
@@ -1495,7 +1331,6 @@ const HomePage = {
     document.getElementById('recoveryScore').style.setProperty('--pct', score + '%');
     document.getElementById('recoveryPct').textContent = score;
     document.getElementById('recoveryDetail').textContent = factors.slice(0, 3).join(' · ');
-    // Color based on score
     const scoreEl = document.getElementById('recoveryScore');
     const pctEl = document.getElementById('recoveryPct');
     let color = 'var(--green)';
@@ -1586,7 +1421,6 @@ const HomePage = {
         Haptic.tap();
       });
     });
-    // Calculate streaks for each habit
     config.forEach(h => {
       let streak = 0;
       for (let i = 0; i < 365; i++) {
@@ -1647,9 +1481,6 @@ const HomePage = {
   }
 };
 
-/* =========================================================
-   NUTRITION PAGE
-   ========================================================= */
 const NutritionPage = {
   _fastingInterval: null,
   refresh() {
@@ -1829,7 +1660,7 @@ const NutritionPage = {
         <select id="cheatMood">
           <option value="great">😄 Soddisfatto</option>
           <option value="ok" selected>😐 OK</option>
-          <option value="guilty">😔 Sense di colpa</option>
+          <option value="guilty">😔 Senso di colpa</option>
         </select>
       </div>
     `, `<button class="btn btn-ghost" onclick="Modal.hide()">Annulla</button><button class="btn btn-primary" id="cheatSave">Registra</button>`);
@@ -1901,7 +1732,6 @@ const NutritionPage = {
       Toast.show('Completa prima il profilo', 'error');
       return;
     }
-    // Mifflin-St Jeor
     let bmr;
     if (profile.sex === 'm') bmr = 10 * profile.weight + 6.25 * profile.height - 5 * profile.age + 5;
     else bmr = 10 * profile.weight + 6.25 * profile.height - 5 * profile.age - 161;
@@ -1965,9 +1795,7 @@ const NutritionPage = {
   }
 };
 
-/* =========================================================
-   NEXU-AI
-   ========================================================= */
+// FIX CRITICO: systemPrompt ora è un getter per evitare crash all'avvio
 const AICoach = {
   models: [
     { id: 'gemini-3.1-flash-lite', label: '⚡ FLASH LITE', badge: 'VELOCE' },
@@ -1977,7 +1805,11 @@ const AICoach = {
   ],
   visionModels: ['gemini-3.5-flash'],
   systemInstructionModels: ['gemini-3.1-flash-lite', 'gemini-3.5-flash'],
-  systemPrompt: `Sei NEXU-AI, il coach AI fitness d'élite di NEXUS Fitness AI. Rispondi SOLO in ITALIANO.
+  
+  // GETTER: viene calcolato solo quando richiesto, non all'avvio
+  get systemPrompt() {
+    const p = Store.state?.profile || {};
+    return `Sei NEXU-AI, il coach AI fitness d'élite di NEXUS Fitness AI. Rispondi SOLO in ITALIANO.
 
 Rispondi SOLO a domande su:
 - Allenamento in palestra, programmazione workout
@@ -1992,18 +1824,18 @@ RIFIUTA educatamente: compiti scolastici, coding, diagnosi mediche, contenuti il
 Stile: conciso, diretto, scientificamente fondato, motivante. Usa elenchi puntati quando utile.
 
 DATI UTENTE ATTUALI (usali per personalizzare):
-${(() => {
-  const p = Store.state.profile;
-  return `Nome: ${p.name}, Età: ${p.age}, Sesso: ${p.sex}, Altezza: ${p.height}cm, Peso: ${p.weight}kg, Obiettivo: ${p.goal}`;
-})()}`,
+Nome: ${p.name || 'Atleta'}, Età: ${p.age || '?'}, Sesso: ${p.sex || '?'}, Altezza: ${p.height || '?'}cm, Peso: ${p.weight || '?'}kg, Obiettivo: ${p.goal || '?'}`;
+  },
+  
   quickPrompts: ['Cosa allenare oggi?', 'Analizza allenamento', 'Massa o definizione?', 'Pasto post-workout?', 'Quante calorie?', 'Migliorare petto', 'Range ipertrofia?', 'Recupero?', 'Workout casa 30min', 'Sovrallenamento?'],
-
+  
   init() {
     this.renderModels();
     this.renderPrompts();
     this.renderHistory();
     this.bindEvents();
   },
+  
   renderModels() {
     const container = document.getElementById('modelSwitcher');
     const current = Store.state.ai.model;
@@ -2018,6 +1850,7 @@ ${(() => {
       });
     });
   },
+  
   renderPrompts() {
     const container = document.getElementById('quickPrompts');
     container.innerHTML = this.quickPrompts.map(q => `<button class="qp" data-prompt="${U.esc(q)}">${U.esc(q)}</button>`).join('');
@@ -2028,6 +1861,7 @@ ${(() => {
       });
     });
   },
+  
   renderHistory() {
     (Store.state.ai.history || []).forEach(msg => {
       if (msg.role === 'user') this.appendMsg('user', msg.content, null, false);
@@ -2035,6 +1869,7 @@ ${(() => {
     });
     this.scrollChat();
   },
+  
   appendMsg(type, text, img = null, save = true) {
     const window_ = document.getElementById('chatWindow');
     const div = document.createElement('div');
@@ -2054,6 +1889,7 @@ ${(() => {
       Store.save();
     }
   },
+  
   appendSys(message) {
     const div = document.createElement('div');
     div.className = 'msg system';
@@ -2061,6 +1897,7 @@ ${(() => {
     document.getElementById('chatWindow').appendChild(div);
     this.scrollChat();
   },
+  
   showTyping() {
     const div = document.createElement('div');
     const rainbow = Store.state.effects?.rainbow;
@@ -2070,8 +1907,11 @@ ${(() => {
     document.getElementById('chatWindow').appendChild(div);
     this.scrollChat();
   },
+  
   hideTyping() { document.getElementById('typingIndicator')?.remove(); },
+  
   scrollChat() { const w = document.getElementById('chatWindow'); w.scrollTop = w.scrollHeight; },
+  
   async send(img = null) {
     const input = document.getElementById('chatInput');
     const text = input.value.trim();
@@ -2096,6 +1936,7 @@ ${(() => {
       document.getElementById('sendBtn').disabled = false;
     }
   },
+  
   async callAPI(text, img) {
     const model = Store.state.ai.model;
     const key = Store.state.ai.apiKey;
@@ -2158,6 +1999,7 @@ ${(() => {
       throw err;
     }
   },
+  
   async uploadPhoto() {
     const file = document.getElementById('fileInput').files?.[0];
     if (!file) return;
@@ -2185,6 +2027,7 @@ ${(() => {
     reader.readAsDataURL(file);
     document.getElementById('fileInput').value = '';
   },
+  
   clearChat() {
     Store.state.ai.history = [];
     Store.save();
@@ -2193,6 +2036,7 @@ ${(() => {
       `<div class="msg ai${rainbow?' rainbow':''}"><span class="msg-text" style="${rainbow?'':'background:none;color:var(--text-0)'}">👋 Chat cancellata. Pronto!</span></div>`;
     Toast.show('Chat cancellata', 'info');
   },
+  
   bindEvents() {
     const input = document.getElementById('chatInput');
     const send = document.getElementById('sendBtn');
@@ -2233,9 +2077,6 @@ const Copilot = {
   }
 };
 
-/* =========================================================
-   WORKOUT PAGE
-   ========================================================= */
 const WorkoutPage = {
   _sessionTimer: null, _sessionSeconds: 0, _restTimer: null, _restSeconds: 90,
   init() {
@@ -2512,9 +2353,6 @@ const WorkoutPage = {
   }
 };
 
-/* =========================================================
-   BODY PAGE (NEW - Weight, BF, Measurements, Photos)
-   ========================================================= */
 const BodyPage = {
   charts: {},
   refresh() {
@@ -2533,8 +2371,6 @@ const BodyPage = {
     const lastBF = bfLog.length ? bfLog[bfLog.length - 1].value : null;
     document.getElementById('bodyCurrentWeight').textContent = lastWeight ? lastWeight.toFixed(1) : '--';
     document.getElementById('bodyCurrentBF').textContent = lastBF ? lastBF.toFixed(1) : '--';
-
-    // Weight trend
     if (weightLog.length >= 2) {
       const prev = weightLog[weightLog.length - 2].value;
       const curr = weightLog[weightLog.length - 1].value;
@@ -2544,7 +2380,6 @@ const BodyPage = {
       else if (diff > 0) { trendEl.textContent = `↑ +${diff.toFixed(1)} kg`; trendEl.className = 'body-metric-trend up'; }
       else { trendEl.textContent = `↓ ${diff.toFixed(1)} kg`; trendEl.className = 'body-metric-trend down'; }
     }
-    // BF trend
     if (bfLog.length >= 2) {
       const prev = bfLog[bfLog.length - 2].value;
       const curr = bfLog[bfLog.length - 1].value;
@@ -2554,7 +2389,6 @@ const BodyPage = {
       else if (diff > 0) { trendEl.textContent = `↑ +${diff.toFixed(1)}%`; trendEl.className = 'body-metric-trend up'; }
       else { trendEl.textContent = `↓ ${diff.toFixed(1)}%`; trendEl.className = 'body-metric-trend down'; }
     }
-    // Lean/Fat mass
     if (lastWeight && lastBF) {
       const fatMass = lastWeight * (lastBF / 100);
       const leanMass = lastWeight - fatMass;
@@ -2693,9 +2527,6 @@ const BodyPage = {
   addPhoto() { document.getElementById('photoInput').click(); }
 };
 
-/* =========================================================
-   TOOLS PAGE
-   ========================================================= */
 const ToolsPage = {
   init() {
     document.querySelectorAll('[data-tool]').forEach(card => {
@@ -2724,7 +2555,6 @@ const ToolsPage = {
       });
     });
   },
-
   openTDEE() {
     const profile = Store.state.profile;
     Modal.show('⚖️ TDEE & BMI', `
@@ -2776,7 +2606,6 @@ const ToolsPage = {
         </div>`;
     };
   },
-
   open1RM() {
     Modal.show('🏋️ 1RM', `
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
@@ -2805,7 +2634,6 @@ const ToolsPage = {
         </div>`;
     };
   },
-
   openRMFrom1RM() {
     Modal.show('🧮 Calcolo da 1RM', `
       <p class="text-sm text-muted" style="margin-bottom:12px">Inserisci il tuo massimale e genera tabella %.</p>
@@ -2837,7 +2665,6 @@ const ToolsPage = {
         </div>`;
     };
   },
-
   openBodyFat() {
     Modal.show('📊 Body Fat', `
       <p class="text-sm text-muted" style="margin-bottom:12px">Metodo US Navy (cm).</p>
@@ -2908,7 +2735,6 @@ const ToolsPage = {
       };
     };
   },
-
   openMacroSplit() {
     const profile = Store.state.profile;
     Modal.show('🥗 Macro Split', `
@@ -2963,7 +2789,6 @@ const ToolsPage = {
       };
     };
   },
-
   openWaterCalc() {
     Modal.show('💧 Water Calc', `
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
@@ -2997,7 +2822,6 @@ const ToolsPage = {
       };
     };
   },
-
   openRestOptimizer() {
     Modal.show('⏱️ Rest Optimizer', `
       <div style="margin-bottom:10px"><label class="text-xs text-muted">Obiettivo</label>
@@ -3026,7 +2850,6 @@ const ToolsPage = {
         </div>`;
     };
   },
-
   openMuscleVolume() {
     const history = Store.state.workout.history.slice(-14);
     const muscleMap = {};
@@ -3061,7 +2884,6 @@ const ToolsPage = {
     }).join('');
     Modal.show('💪 Muscle Volume', `<p class="text-sm text-muted" style="margin-bottom:12px">Set per gruppo (ultimi 14gg).</p>${html}<div class="text-xs text-muted" style="margin-top:12px">💡 Target: 10-20 set/settimana</div>`, `<button class="btn btn-ghost" onclick="Modal.hide()">Chiudi</button>`);
   },
-
   openDeload() {
     const history = Store.state.workout.history;
     const lastDeload = Store.state.progress.lastDeloadDate || null;
@@ -3092,7 +2914,6 @@ const ToolsPage = {
       Toast.show('Deload registrato ✓', 'success');
     };
   },
-
   openHRZones() {
     Modal.show('❤️ HR Zones', `
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
@@ -3125,7 +2946,6 @@ const ToolsPage = {
         }).join('')}`;
     };
   },
-
   openPumpGuide() {
     const p = [
       { name: '🔥 Classic', desc: '4x12-15, rec 60s', use: 'Ipertrofia', tips: 'Picco 1-2s' },
@@ -3139,7 +2959,6 @@ const ToolsPage = {
     ];
     Modal.show('🔥 Pump Protocols', `<p class="text-sm text-muted" style="margin-bottom:12px">Tecniche avanzate.</p><div style="max-height:400px;overflow-y:auto">${p.map(x => `<div class="card" style="padding:12px;margin-bottom:8px;background:var(--surface)"><div style="font-weight:700">${x.name}</div><div class="text-sm" style="color:var(--accent)">${x.desc}</div><div class="text-xs text-muted"><strong>Uso:</strong> ${x.use}</div><div class="text-xs text-muted"><strong>💡</strong> ${x.tips}</div></div>`).join('')}</div>`, `<button class="btn btn-ghost" onclick="Modal.hide()">Chiudi</button>`);
   },
-
   openAchievements() {
     const unlocked = Store.state.achievements || [];
     const html = ACHIEVEMENTS.map(a => {
@@ -3148,7 +2967,6 @@ const ToolsPage = {
     }).join('');
     Modal.show('🎖️ Achievements', `<div class="text-sm text-muted" style="margin-bottom:12px">${unlocked.length} / ${ACHIEVEMENTS.length}</div><div class="achievement-grid">${html}</div>`, `<button class="btn btn-ghost" onclick="Modal.hide()">Chiudi</button>`);
   },
-
   openSleep() {
     const sleepLog = Store.state.progress.sleepLog || [];
     const recent = sleepLog.slice(-7);
@@ -3183,7 +3001,6 @@ const ToolsPage = {
       Toast.show(`Sonno: ${hours}h (${quality}/10)`, 'success'); Achievements.check();
     };
   },
-
   openCalendar() {
     const history = Store.state.workout.history;
     const today = new Date();
@@ -3194,7 +3011,7 @@ const ToolsPage = {
     const workoutDates = new Set(history.map(w => w.date?.split('T')[0] || ''));
     const names = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
     let html = `<h3 style="text-align:center;margin-bottom:12px">${names[month]} ${year}</h3><div class="calendar">`;
-    ['L','M','M ','G','V','S','D'].forEach(d => html += `<div class="cal-day header">${d}</div>`);
+    ['L','M','M','G','V','S','D'].forEach(d => html += `<div class="cal-day header">${d}</div>`);
     for (let i = 0; i < offset; i++) html += '<div class="cal-day"></div>';
     for (let d = 1; d <= daysInMonth; d++) {
       const dateKey = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
@@ -3210,7 +3027,6 @@ const ToolsPage = {
       <div class="text-sm"><div>• <strong>${monthWorkouts.length}</strong> workout</div><div>• Volume: <strong>${totalVol.toLocaleString()} kg</strong></div><div>• Tempo: <strong>${Math.round(totalTime / 60)} min</strong></div></div>`;
     Modal.show('📅 Calendario', html, `<button class="btn btn-ghost" onclick="Modal.hide()">Chiudi</button>`);
   },
-
   openWeeklyReport() {
     const today = new Date();
     const weekStart = new Date(today); weekStart.setDate(today.getDate() - 6);
@@ -3232,411 +3048,389 @@ const ToolsPage = {
       </div>
     `, `<button class="btn btn-ghost" onclick="Modal.hide()">Chiudi</button>`);
   },
-
   openExerciseLibrary() {
     const categories = ['tutti', 'petto', 'schiena', 'gambe', 'spalle', 'braccia', 'core', 'cardio'];
     const catChips = categories.map((c, i) => `<button class="cat-chip ${i===0?'active':''}" data-cat="${c}">${c.charAt(0).toUpperCase()+c.slice(1)}</button>`).join('');
-    Modal.show('📚 Exercise Library', `
-      <input type="text" id="libSearch" placeholder="Cerca..." style="margin-bottom:10px"/>
-      <div class="category-chips">${catChips}</div>
-      <div id="libList" style="max-height:350px;overflow-y:auto"></div>
-    `, `<button class="btn btn-ghost" onclick="Modal.hide()">Chiudi</button>`);
-    const list = document.getElementById('libList');
-    const searchInput = document.getElementById('libSearch');
-    let currentCategory = 'tutti';
-    const renderList = () => {
-      const query = searchInput.value.toLowerCase();
-      const filtered = EXERCISE_LIBRARY.filter(ex => (currentCategory === 'tutti' || ex.category === currentCategory) && (ex.name.toLowerCase().includes(query) || ex.muscle.toLowerCase().includes(query)));
-      list.innerHTML = filtered.length ? filtered.map(ex => `
-        <div class="exercise-lib-item" data-add-ex="${U.esc(ex.name)}">
-          <div><div class="exercise-lib-name">${U.esc(ex.name)}</div><div class="exercise-lib-muscle">${U.esc(ex.muscle)}</div></div>
-          <button class="btn btn-sm btn-primary" style="width:auto;padding:4px 10px;font-size:11px">+</button>
-        </div>
-      `).join('') : '<div class="text-muted text-sm text-center" style="padding:20px">Nessun esercizio</div>';
-      list.querySelectorAll('[data-add-ex]').forEach(item => {
-        item.addEventListener('click', () => {
-          const name = item.dataset.addEx;
-          const split = Store.state.workout.currentSplit;
-          Store.state.workout.splits[split].exercises = Store.state.workout.splits[split].exercises || [];
-          Store.state.workout.splits[split].exercises.push({ id: U.uid(), name, sets: [{ weight: 0, reps: 0, rpe: '', notes: '' }] });
-          if (!WorkoutPage._sessionTimer) WorkoutPage.startSession();
-          Store.save(); Modal.hide(); WorkoutPage.render();
-          Toast.show(`${name} aggiunto ✓`, 'success');
-        });
-      });
-    };
-    renderList();
-    searchInput.addEventListener('input', renderList);
-    document.querySelectorAll('.cat-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        currentCategory = chip.dataset.cat;
-        renderList();
-      });
-    });
-  }
+
+Modal.show('📚 Exercise Library', `
+<input type="text" id="libSearch" placeholder="Cerca..." style="margin-bottom:10px"/>
+<div class="category-chips">${catChips}</div>
+<div id="libList" style="max-height:350px;overflow-y:auto"></div>
+`, `<button class="btn btn-ghost" onclick="Modal.hide()">Chiudi</button>`);
+const list = document.getElementById('libList');
+const searchInput = document.getElementById('libSearch');
+let currentCategory = 'tutti';
+const renderList = () => {
+const query = searchInput.value.toLowerCase();
+const filtered = EXERCISE_LIBRARY.filter(ex => (currentCategory === 'tutti' || ex.category === currentCategory) && (ex.name.toLowerCase().includes(query) || ex.muscle.toLowerCase().includes(query)));
+list.innerHTML = filtered.length ? filtered.map(ex => `
+<div class="exercise-lib-item" data-add-ex="${U.esc(ex.name)}">
+<div><div class="exercise-lib-name">${U.esc(ex.name)}</div><div class="exercise-lib-muscle">${U.esc(ex.muscle)}</div></div>
+<button class="btn btn-sm btn-primary" style="width:auto;padding:4px 10px;font-size:11px">+</button>
+</div>
+`).join('') : '<div class="text-muted text-sm text-center" style="padding:20px">Nessun esercizio</div>';
+list.querySelectorAll('[data-add-ex]').forEach(item => {
+item.addEventListener('click', () => {
+const name = item.dataset.addEx;
+const split = Store.state.workout.currentSplit;
+Store.state.workout.splits[split].exercises = Store.state.workout.splits[split].exercises || [];
+Store.state.workout.splits[split].exercises.push({ id: U.uid(), name, sets: [{ weight: 0, reps: 0, rpe: '', notes: '' }] });
+if (!WorkoutPage._sessionTimer) WorkoutPage.startSession();
+Store.save(); Modal.hide(); WorkoutPage.render();
+Toast.show(`${name} aggiunto ✓`, 'success');
+});
+});
+};
+renderList();
+searchInput.addEventListener('input', renderList);
+document.querySelectorAll('.cat-chip').forEach(chip => {
+chip.addEventListener('click', () => {
+document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+chip.classList.add('active');
+currentCategory = chip.dataset.cat;
+renderList();
+});
+});
+}
 };
 
 /* =========================================================
-   PROGRESS PAGE
-   ========================================================= */
+PROGRESS PAGE
+========================================================= */
 const ProgressPage = {
-  charts: {},
-  render() {
-    this.renderInsights();
-    if (typeof Chart === 'undefined') { setTimeout(() => this.render(), 300); return; }
-    this.renderVolume(); this.renderCalories(); this.renderSleep();
-  },
-  renderInsights() {
-    const state = Store.state;
-    const insights = [];
-    const today = U.today();
-    const day = state.nutrition.days[today] || {};
-    const history = state.workout.history;
-    if (history.length >= 3) insights.push({ t:'success',i:'💪',ti:'Progressione',tx:'Costanza sta dando frutti.' });
-    if ((state.progress.streak || 0) >= 3) insights.push({ t:'success',i:'🔥',ti:`${state.progress.streak}gg streak!`,tx:'Superpotere.' });
-    if (day.calories > 0 && state.nutrition.goals.calories) {
-      const pct = (day.calories / state.nutrition.goals.calories) * 100;
-      if (pct < 70) insights.push({ t:'warning',i:'🍽️',ti:'Sotto-alimentazione',tx:`Solo ${Math.round(pct)}% obiettivo.` });
-    }
-    const prCount = Object.keys(state.workout.personalRecords || {}).length;
-    if (prCount >= 3) insights.push({ t:'success',i:'🏆',ti:`${prCount} PR`,tx:'Stabilendo record!' });
-    if (!insights.length) insights.push({ t:'info',i:'📊',ti:'Traccia dati',tx:'Più dati = migliori insight.' });
-    document.getElementById('insightsList').innerHTML = insights.map(x => `<div class="insight ${x.t}"><div class="insight-icon">${x.i}</div><div class="insight-text"><div class="insight-title">${U.esc(x.ti)}</div><div>${U.esc(x.tx)}</div></div></div>`).join('');
-  },
-  _opts() {
-    return { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(13,13,21,.95)', padding: 10, cornerRadius: 8 } }, scales: { x: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#7a7e95', font: { size: 10 } } }, y: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#7a7e95', font: { size: 10 } }, beginAtZero: true } } };
-  },
-  _draw(id, cfg) {
-    const canvas = document.getElementById(id);
-    if (!canvas || typeof Chart === 'undefined') return;
-    if (this.charts[id]) this.charts[id].destroy();
-    this.charts[id] = new Chart(canvas, { ...cfg, options: { ...this._opts(), ...(cfg.options || {}) } });
-  },
-  renderVolume() {
-    const history = Store.state.workout.history.slice(-14);
-    this._draw('chartVolume', { type: 'bar', data: { labels: history.length ? history.map(w => { const d = new Date(w.date); return (d.getMonth()+1)+'/'+d.getDate(); }) : ['—'], datasets: [{ label: 'Volume', data: history.length ? history.map(w => (w.exercises||[]).reduce((a, e) => a + (e.sets||[]).reduce((b, s) => b + (s.weight||0)*(s.reps||0), 0), 0)) : [0], backgroundColor: 'rgba(168,85,247,.6)', borderColor: '#a855f7', borderRadius: 6 }] } });
-  },
-  renderCalories() {
-    const days = [];
-    for (let i = 13; i >= 0; i--) { const k = U.daysAgo(i), x = new Date(k); days.push({ l: (x.getMonth()+1)+'/'+x.getDate(), v: (Store.state.nutrition.days[k]?.calories)||0 }); }
-    this._draw('chartCalories', { type: 'line', data: { labels: days.map(d => d.l), datasets: [{ label: 'Cal', data: days.map(d => d.v), borderColor: '#ff3355', backgroundColor: 'rgba(255,51,85,.12)', fill: true, tension: .35, pointRadius: 3, borderWidth: 2 }] } });
-  },
-  renderSleep() {
-    const logs = Store.state.progress.sleepLog.slice(-14);
-    this._draw('chartSleep', { type: 'bar', data: { labels: logs.length ? logs.map(l => { const d = new Date(l.date); return (d.getMonth()+1)+'/'+d.getDate(); }) : ['—'], datasets: [{ label: 'Ore', data: logs.length ? logs.map(l => l.hours) : [0], backgroundColor: 'rgba(0,212,255,.6)', borderColor: '#00d4ff', borderRadius: 6 }] } });
-  }
+charts: {},
+render() {
+this.renderInsights();
+if (typeof Chart === 'undefined') { setTimeout(() => this.render(), 300); return; }
+this.renderVolume(); this.renderCalories(); this.renderSleep();
+},
+renderInsights() {
+const state = Store.state;
+const insights = [];
+const today = U.today();
+const day = state.nutrition.days[today] || {};
+const history = state.workout.history;
+if (history.length >= 3) insights.push({ t:'success',i:'💪',ti:'Progressione',tx:'Costanza sta dando frutti.' });
+if ((state.progress.streak || 0) >= 3) insights.push({ t:'success',i:'🔥',ti:`${state.progress.streak}gg streak!`,tx:'Superpotere.' });
+if (day.calories > 0 && state.nutrition.goals.calories) {
+const pct = (day.calories / state.nutrition.goals.calories) * 100;
+if (pct < 70) insights.push({ t:'warning',i:'🍽️',ti:'Sotto-alimentazione',tx:`Solo ${Math.round(pct)}% obiettivo.` });
+}
+const prCount = Object.keys(state.workout.personalRecords || {}).length;
+if (prCount >= 3) insights.push({ t:'success',i:'🏆',ti:`${prCount} PR`,tx:'Stabilendo record!' });
+if (!insights.length) insights.push({ t:'info',i:'📊',ti:'Traccia dati',tx:'Più dati = migliori insight.' });
+document.getElementById('insightsList').innerHTML = insights.map(x => `<div class="insight ${x.t}"><div class="insight-icon">${x.i}</div><div class="insight-text"><div class="insight-title">${U.esc(x.ti)}</div><div>${U.esc(x.tx)}</div></div></div>`).join('');
+},
+_opts() {
+return { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(13,13,21,.95)', padding: 10, cornerRadius: 8 } }, scales: { x: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#7a7e95', font: { size: 10 } } }, y: { grid: { color: 'rgba(255,255,255,.04)' }, ticks: { color: '#7a7e95', font: { size: 10 } }, beginAtZero: true } } };
+},
+_draw(id, cfg) {
+const canvas = document.getElementById(id);
+if (!canvas || typeof Chart === 'undefined') return;
+if (this.charts[id]) this.charts[id].destroy();
+this.charts[id] = new Chart(canvas, { ...cfg, options: { ...this._opts(), ...(cfg.options || {}) } });
+},
+renderVolume() {
+const history = Store.state.workout.history.slice(-14);
+this._draw('chartVolume', { type: 'bar', data: { labels: history.length ? history.map(w => { const d = new Date(w.date); return (d.getMonth()+1)+'/'+d.getDate(); }) : ['—'], datasets: [{ label: 'Volume', data: history.length ? history.map(w => (w.exercises||[]).reduce((a, e) => a + (e.sets||[]).reduce((b, s) => b + (s.weight||0)*(s.reps||0), 0), 0)) : [0], backgroundColor: 'rgba(168,85,247,.6)', borderColor: '#a855f7', borderRadius: 6 }] } });
+},
+renderCalories() {
+const days = [];
+for (let i = 13; i >= 0; i--) { const k = U.daysAgo(i), x = new Date(k); days.push({ l: (x.getMonth()+1)+'/'+x.getDate(), v: (Store.state.nutrition.days[k]?.calories)||0 }); }
+this._draw('chartCalories', { type: 'line', data: { labels: days.map(d => d.l), datasets: [{ label: 'Cal', data: days.map(d => d.v), borderColor: '#ff3355', backgroundColor: 'rgba(255,51,85,.12)', fill: true, tension: .35, pointRadius: 3, borderWidth: 2 }] } });
+},
+renderSleep() {
+const logs = Store.state.progress.sleepLog.slice(-14);
+this._draw('chartSleep', { type: 'bar', data: { labels: logs.length ? logs.map(l => { const d = new Date(l.date); return (d.getMonth()+1)+'/'+d.getDate(); }) : ['—'], datasets: [{ label: 'Ore', data: logs.length ? logs.map(l => l.hours) : [0], backgroundColor: 'rgba(0,212,255,.6)', borderColor: '#00d4ff', borderRadius: 6 }] } });
+}
 };
 
 /* =========================================================
-   ACHIEVEMENTS
-   ========================================================= */
+ACHIEVEMENTS
+========================================================= */
 const Achievements = {
-  check() {
-    const state = Store.state;
-    const unlocked = new Set(state.achievements || []);
-    const newlyUnlocked = [];
-    const check = (id, cond) => { if (cond && !unlocked.has(id)) { unlocked.add(id); newlyUnlocked.push(id); } };
-    check('first_workout', state.workout.history.length >= 1);
-    check('streak_7', (state.progress.streak || 0) >= 7);
-    check('streak_30', (state.progress.streak || 0) >= 30);
-    check('streak_100', (state.progress.streak || 0) >= 100);
-    check('workouts_10', state.workout.history.length >= 10);
-    check('workouts_50', state.workout.history.length >= 50);
-    check('workouts_100', state.workout.history.length >= 100);
-    const totalVolume = state.workout.history.reduce((a, w) => a + (w.exercises||[]).reduce((b, e) => b + (e.sets||[]).reduce((c, s) => c + (s.weight||0)*(s.reps||0), 0), 0), 0);
-    check('volume_10k', totalVolume >= 10000);
-    check('volume_100k', totalVolume >= 100000);
-    const prCount = Object.keys(state.workout.personalRecords || {}).length;
-    check('pr_1', prCount >= 1);
-    check('pr_10', prCount >= 10);
-    check('weight_10', state.progress.weightLog.length >= 10);
-    check('sleep_7days', (state.progress.sleepLog || []).length >= 7);
-    if (newlyUnlocked.length) {
-      state.achievements = Array.from(unlocked);
-      Store.save(true);
-      newlyUnlocked.forEach(id => {
-        const a = ACHIEVEMENTS.find(x => x.id === id);
-        if (a) { Toast.show(`🎖️ ${a.name}!`, 'pr', 5000); Haptic.pr(); }
-      });
-    }
-  }
+check() {
+const state = Store.state;
+const unlocked = new Set(state.achievements || []);
+const newlyUnlocked = [];
+const check = (id, cond) => { if (cond && !unlocked.has(id)) { unlocked.add(id); newlyUnlocked.push(id); } };
+check('first_workout', state.workout.history.length >= 1);
+check('streak_7', (state.progress.streak || 0) >= 7);
+check('streak_30', (state.progress.streak || 0) >= 30);
+check('streak_100', (state.progress.streak || 0) >= 100);
+check('workouts_10', state.workout.history.length >= 10);
+check('workouts_50', state.workout.history.length >= 50);
+check('workouts_100', state.workout.history.length >= 100);
+const totalVolume = state.workout.history.reduce((a, w) => a + (w.exercises||[]).reduce((b, e) => b + (e.sets||[]).reduce((c, s) => c + (s.weight||0)*(s.reps||0), 0), 0), 0);
+check('volume_10k', totalVolume >= 10000);
+check('volume_100k', totalVolume >= 100000);
+const prCount = Object.keys(state.workout.personalRecords || {}).length;
+check('pr_1', prCount >= 1);
+check('pr_10', prCount >= 10);
+check('weight_10', state.progress.weightLog.length >= 10);
+check('sleep_7days', (state.progress.sleepLog || []).length >= 7);
+if (newlyUnlocked.length) {
+state.achievements = Array.from(unlocked);
+Store.save(true);
+newlyUnlocked.forEach(id => {
+const a = ACHIEVEMENTS.find(x => x.id === id);
+if (a) { Toast.show(`🎖️ ${a.name}!`, 'pr', 5000); Haptic.pr(); }
+});
+}
+}
 };
 
 /* =========================================================
-   SETTINGS PAGE
-   ========================================================= */
+SETTINGS PAGE
+========================================================= */
 const SettingsPage = {
-  init() {
-    const state = Store.state;
-    document.getElementById('apiKeyInput').value = state.ai.apiKey || '';
-    document.getElementById('apiKeyInput').addEventListener('change', (e) => {
-      Store.state.ai.apiKey = e.target.value.trim(); Store.save(); Toast.show('API key salvata', 'success');
-    });
-    document.getElementById('exportBtn').addEventListener('click', () => Store.exportJSON());
-    document.getElementById('importBtn').addEventListener('click', () => document.getElementById('importFileInput').click());
-    document.getElementById('importFileInput').addEventListener('change', (e) => {
-      if (e.target.files?.[0]) Store.importJSON(e.target.files[0]);
-      e.target.value = '';
-    });
-    document.getElementById('resetBtn').addEventListener('click', () => {
-      Modal.show('Reset Dati', '<p class="text-sm text-muted">Eliminare TUTTI i dati? Azione irreversibile.</p>',
-        `<button class="btn btn-ghost" onclick="Modal.hide()">Annulla</button><button class="btn btn-danger" id="confirmReset">Reset</button>`);
-      document.getElementById('confirmReset').onclick = () => { Store.reset(); Modal.hide(); };
-    });
-    document.getElementById('openProfileBtn').addEventListener('click', () => this.openProfile());
-    document.getElementById('addHabitBtn').addEventListener('click', () => this.addHabit());
-    this.initThemes();
-    this.initEffects();
-    this.renderHabitsConfig();
-    this.updateBackupInfo();
-  },
-
-  openProfile() {
-    const p = Store.state.profile;
-    Modal.show('👤 Profilo Utente', `
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-        <div><label class="text-xs text-muted">Nome</label><input type="text" id="pName" value="${U.esc(p.name||'')}" style="margin-top:4px"/></div>
-        <div><label class="text-xs text-muted">Età</label><input type="number" id="pAge" value="${p.age||25}" style="margin-top:4px"/></div>
-        <div><label class="text-xs text-muted">Sesso</label><select id="pSex" style="margin-top:4px"><option value="m" ${p.sex==='m'?'selected':''}>Maschio</option><option value="f" ${p.sex==='f'?'selected':''}>Femmina</option></select></div>
-        <div><label class="text-xs text-muted">Altezza (cm)</label><input type="number" id="pHeight" value="${p.height||175}" style="margin-top:4px"/></div>
-        <div><label class="text-xs text-muted">Peso (kg)</label><input type="number" step="0.1" id="pWeight" value="${p.weight||75}" style="margin-top:4px"/></div>
-        <div><label class="text-xs text-muted">Body Fat %</label><input type="number" step="0.1" id="pBF" value="${p.bodyFat||''}" placeholder="Opz." style="margin-top:4px"/></div>
-      </div>
-      <div style="margin-top:10px"><label class="text-xs text-muted">Livello Attività</label>
-        <select id="pActivity" style="margin-top:4px">
-          <option value="1.2" ${p.activityLevel===1.2?'selected':''}>Sedentario</option>
-          <option value="1.375" ${p.activityLevel===1.375?'selected':''}>Leggero (1-3gg)</option>
-          <option value="1.55" ${p.activityLevel===1.55?'selected':''}>Moderato (3-5gg)</option>
-          <option value="1.725" ${p.activityLevel===1.725?'selected':''}>Intenso (6-7gg)</option>
-          <option value="1.9" ${p.activityLevel===1.9?'selected':''}>Atleta</option>
-        </select>
-      </div>
-      <div style="margin-top:10px"><label class="text-xs text-muted">Obiettivo</label>
-        <select id="pGoal" style="margin-top:4px">
-          <option value="cut" ${p.goal==='cut'?'selected':''}>✂️ Cut</option>
-          <option value="maintain" ${p.goal==='maintain'?'selected':''}>⚖️ Mantenimento</option>
-          <option value="lean-bulk" ${p.goal==='lean-bulk'?'selected':''}>💪 Lean Bulk</option>
-          <option value="bulk" ${p.goal==='bulk'?'selected':''}>🔥 Bulk</option>
-        </select>
-      </div>
-      <div style="margin-top:10px"><label class="text-xs text-muted">Obiettivo Idratazione (ml)</label><input type="number" id="pHydration" value="${p.hydrationGoal||2500}" style="margin-top:4px"/></div>
-    `, `<button class="btn btn-ghost" onclick="Modal.hide()">Annulla</button><button class="btn btn-primary" id="saveProfile">Salva</button>`);
-    document.getElementById('saveProfile').onclick = () => {
-      p.name = document.getElementById('pName').value.trim() || 'Atleta';
-      p.age = parseInt(document.getElementById('pAge').value, 10) || 25;
-      p.sex = document.getElementById('pSex').value;
-      p.height = parseFloat(document.getElementById('pHeight').value) || 175;
-      p.weight = parseFloat(document.getElementById('pWeight').value) || 75;
-      p.bodyFat = parseFloat(document.getElementById('pBF').value) || null;
-      p.activityLevel = parseFloat(document.getElementById('pActivity').value) || 1.55;
-      p.goal = document.getElementById('pGoal').value;
-      p.hydrationGoal = parseInt(document.getElementById('pHydration').value, 10) || 2500;
-      Store.save(true); Modal.hide(); App.refreshAll();
-      Toast.show('Profilo salvato ✓', 'success');
-    };
-  },
-
-  addHabit() {
-    Modal.show('Nuova Abitudine', `<input type="text" id="newHabitName" placeholder="es. 💊 Prendere Creatina"/>`,
-      `<button class="btn btn-ghost" onclick="Modal.hide()">Annulla</button><button class="btn btn-primary" id="saveHabit">Aggiungi</button>`);
-    document.getElementById('saveHabit').onclick = () => {
-      const name = document.getElementById('newHabitName').value.trim();
-      if (!name) return;
-      Store.state.habits.config.push({ id: U.uid(), name, enabled: true });
-      Store.save(); Modal.hide(); this.renderHabitsConfig(); HomePage.renderHabits();
-      Toast.show('Abitudine aggiunta', 'success');
-    };
-  },
-
-  renderHabitsConfig() {
-    const container = document.getElementById('habitsConfig');
-    const habits = Store.state.habits.config;
-    if (!habits.length) { container.innerHTML = '<div class="text-muted text-sm text-center">Nessuna</div>'; return; }
-    container.innerHTML = habits.map(h => `
-      <div class="habit-item">
-        <div class="habit-check ${h.enabled?'done':''}" data-toggle-habit="${h.id}"></div>
-        <div class="habit-name">${U.esc(h.name)}</div>
-        <button class="text-xs" data-del-habit="${h.id}" style="color:var(--red);background:none;border:none;cursor:pointer">×</button>
-      </div>
-    `).join('');
-    container.querySelectorAll('[data-toggle-habit]').forEach(btn => {
-      btn.onclick = () => {
-        const h = habits.find(x => x.id === btn.dataset.toggleHabit);
-        if (h) { h.enabled = !h.enabled; Store.save(); this.renderHabitsConfig(); HomePage.renderHabits(); }
-      };
-    });
-    container.querySelectorAll('[data-del-habit]').forEach(btn => {
-      btn.onclick = () => {
-        Store.state.habits.config = habits.filter(x => x.id !== btn.dataset.delHabit);
-        Store.save(); this.renderHabitsConfig(); HomePage.renderHabits();
-      };
-    });
-  },
-
-  updateBackupInfo() {
-    const el = document.getElementById('backupInfo');
-    const last = Store.state.meta.lastBackup;
-    el.textContent = last ? `Ultimo backup: ${U.formatDateIT(new Date(last).toISOString())}` : 'Ultimo backup: mai';
-  },
-
-  initThemes() {
-    document.querySelectorAll('#themeGrid .theme-card').forEach(card => {
-      card.classList.toggle('active', card.dataset.theme === Store.state.effects.theme);
-      card.addEventListener('click', () => { Effects.applyTheme(card.dataset.theme); Haptic.success(); });
-    });
-  },
-  refreshThemeGrid() {
-    document.querySelectorAll('#themeGrid .theme-card').forEach(card => {
-      card.classList.toggle('active', card.dataset.theme === Store.state.effects.theme);
-    });
-  },
-  initEffects() {
-    const e = Store.state.effects;
-    const toggle = (id, key, onChange) => {
-      const el = document.getElementById(id); if (!el) return;
-      el.classList.toggle('on', !!e[key]);
-      el.onclick = () => { e[key] = !e[key]; el.classList.toggle('on', e[key]); Store.save(); Effects.apply(); if (onChange) onChange(); Haptic.tap(); };
-    };
-    toggle('toggleRainbow', 'rainbow'); toggle('toggleGrid', 'grid'); toggle('toggleScan', 'scan');
-    toggle('toggleParticles', 'particles', () => { if (e.particles) Particles.start(); else Particles.stop(); });
-    toggle('toggleBgAnim', 'bgAnim'); toggle('toggleGlass', 'glass'); toggle('toggleHolo', 'holo');
-    toggle('toggleHaptic', 'haptic'); toggle('toggleReduceMotion', 'reduceMotion'); toggle('toggleLegacy', 'legacy');
-    document.querySelectorAll('#colorSwatches .color-swatch').forEach(sw => {
-      sw.classList.toggle('active', sw.dataset.color === e.color);
-      sw.onclick = () => { e.color = sw.dataset.color; document.querySelectorAll('#colorSwatches .color-swatch').forEach(x => x.classList.remove('active')); sw.classList.add('active'); Store.save(); Effects.apply(); };
-    });
-    const bindSelect = (id, key, parser = parseFloat) => {
-      const el = document.getElementById(id); if (!el) return;
-      el.value = String(e[key]); el.onchange = () => { e[key] = parser(el.value); Store.save(); Effects.apply(); };
-    };
-    bindSelect('selectGlow', 'glow'); bindSelect('selectAnim', 'anim'); bindSelect('selectMsgStyle', 'msgStyle', v => v);
-    const fs = document.getElementById('fontScaleRange');
-    if (fs) { fs.value = String(e.fontScale || 1); fs.oninput = () => { e.fontScale = parseFloat(fs.value); Store.save(); Effects.apply(); }; }
-    document.getElementById('resetEffectsBtn').onclick = () => {
-      Modal.show('Reset', '<p class="text-sm text-muted">Ripristinare default?</p>',
-        `<button class="btn btn-ghost" onclick="Modal.hide()">Annulla</button><button class="btn btn-primary" id="confirmResetFx">Reset</button>`);
-      document.getElementById('confirmResetFx').onclick = () => { Store.state.effects = { ...DEFAULT_EFFECTS }; Store.save(true); Effects.apply(); Modal.hide(); this.initEffects(); };
-    };
-  },
-  refreshEffectControls() { this.initEffects(); }
+init() {
+const state = Store.state;
+document.getElementById('apiKeyInput').value = state.ai.apiKey || '';
+document.getElementById('apiKeyInput').addEventListener('change', (e) => {
+Store.state.ai.apiKey = e.target.value.trim(); Store.save(); Toast.show('API key salvata', 'success');
+});
+document.getElementById('exportBtn').addEventListener('click', () => Store.exportJSON());
+document.getElementById('importBtn').addEventListener('click', () => document.getElementById('importFileInput').click());
+document.getElementById('importFileInput').addEventListener('change', (e) => {
+if (e.target.files?.[0]) Store.importJSON(e.target.files[0]);
+e.target.value = '';
+});
+document.getElementById('resetBtn').addEventListener('click', () => {
+Modal.show('Reset Dati', '<p class="text-sm text-muted">Eliminare TUTTI i dati? Azione irreversibile.</p>',
+`<button class="btn btn-ghost" onclick="Modal.hide()">Annulla</button><button class="btn btn-danger" id="confirmReset">Reset</button>`);
+document.getElementById('confirmReset').onclick = () => { Store.reset(); Modal.hide(); };
+});
+document.getElementById('openProfileBtn').addEventListener('click', () => this.openProfile());
+document.getElementById('addHabitBtn').addEventListener('click', () => this.addHabit());
+this.initThemes();
+this.initEffects();
+this.renderHabitsConfig();
+this.updateBackupInfo();
+},
+openProfile() {
+const p = Store.state.profile;
+Modal.show('👤 Profilo Utente', `
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<div><label class="text-xs text-muted">Nome</label><input type="text" id="pName" value="${U.esc(p.name||'')}" style="margin-top:4px"/></div>
+<div><label class="text-xs text-muted">Età</label><input type="number" id="pAge" value="${p.age||25}" style="margin-top:4px"/></div>
+<div><label class="text-xs text-muted">Sesso</label><select id="pSex" style="margin-top:4px"><option value="m" ${p.sex==='m'?'selected':''}>Maschio</option><option value="f" ${p.sex==='f'?'selected':''}>Femmina</option></select></div>
+<div><label class="text-xs text-muted">Altezza (cm)</label><input type="number" id="pHeight" value="${p.height||175}" style="margin-top:4px"/></div>
+<div><label class="text-xs text-muted">Peso (kg)</label><input type="number" step="0.1" id="pWeight" value="${p.weight||75}" style="margin-top:4px"/></div>
+<div><label class="text-xs text-muted">Body Fat %</label><input type="number" step="0.1" id="pBF" value="${p.bodyFat||''}" placeholder="Opz." style="margin-top:4px"/></div>
+</div>
+<div style="margin-top:10px"><label class="text-xs text-muted">Livello Attività</label>
+<select id="pActivity" style="margin-top:4px">
+<option value="1.2" ${p.activityLevel===1.2?'selected':''}>Sedentario</option>
+<option value="1.375" ${p.activityLevel===1.375?'selected':''}>Leggero (1-3gg)</option>
+<option value="1.55" ${p.activityLevel===1.55?'selected':''}>Moderato (3-5gg)</option>
+<option value="1.725" ${p.activityLevel===1.725?'selected':''}>Intenso (6-7gg)</option>
+<option value="1.9" ${p.activityLevel===1.9?'selected':''}>Atleta</option>
+</select>
+</div>
+<div style="margin-top:10px"><label class="text-xs text-muted">Obiettivo</label>
+<select id="pGoal" style="margin-top:4px">
+<option value="cut" ${p.goal==='cut'?'selected':''}>✂️ Cut</option>
+<option value="maintain" ${p.goal==='maintain'?'selected':''}>⚖️ Mantenimento</option>
+<option value="lean-bulk" ${p.goal==='lean-bulk'?'selected':''}>💪 Lean Bulk</option>
+<option value="bulk" ${p.goal==='bulk'?'selected':''}>🔥 Bulk</option>
+</select>
+</div>
+<div style="margin-top:10px"><label class="text-xs text-muted">Obiettivo Idratazione (ml)</label><input type="number" id="pHydration" value="${p.hydrationGoal||2500}" style="margin-top:4px"/></div>
+`, `<button class="btn btn-ghost" onclick="Modal.hide()">Annulla</button><button class="btn btn-primary" id="saveProfile">Salva</button>`);
+document.getElementById('saveProfile').onclick = () => {
+p.name = document.getElementById('pName').value.trim() || 'Atleta';
+p.age = parseInt(document.getElementById('pAge').value, 10) || 25;
+p.sex = document.getElementById('pSex').value;
+p.height = parseFloat(document.getElementById('pHeight').value) || 175;
+p.weight = parseFloat(document.getElementById('pWeight').value) || 75;
+p.bodyFat = parseFloat(document.getElementById('pBF').value) || null;
+p.activityLevel = parseFloat(document.getElementById('pActivity').value) || 1.55;
+p.goal = document.getElementById('pGoal').value;
+p.hydrationGoal = parseInt(document.getElementById('pHydration').value, 10) || 2500;
+Store.save(true); Modal.hide(); App.refreshAll();
+Toast.show('Profilo salvato ✓', 'success');
+};
+},
+addHabit() {
+Modal.show('Nuova Abitudine', `<input type="text" id="newHabitName" placeholder="es. 💊 Prendere Creatina"/>`,
+`<button class="btn btn-ghost" onclick="Modal.hide()">Annulla</button><button class="btn btn-primary" id="saveHabit">Aggiungi</button>`);
+document.getElementById('saveHabit').onclick = () => {
+const name = document.getElementById('newHabitName').value.trim();
+if (!name) return;
+Store.state.habits.config.push({ id: U.uid(), name, enabled: true });
+Store.save(); Modal.hide(); this.renderHabitsConfig(); HomePage.renderHabits();
+Toast.show('Abitudine aggiunta', 'success');
+};
+},
+renderHabitsConfig() {
+const container = document.getElementById('habitsConfig');
+const habits = Store.state.habits.config;
+if (!habits.length) { container.innerHTML = '<div class="text-muted text-sm text-center">Nessuna</div>'; return; }
+container.innerHTML = habits.map(h => `
+<div class="habit-item">
+<div class="habit-check ${h.enabled?'done':''}" data-toggle-habit="${h.id}"></div>
+<div class="habit-name">${U.esc(h.name)}</div>
+<button class="text-xs" data-del-habit="${h.id}" style="color:var(--red);background:none;border:none;cursor:pointer">×</button>
+</div>
+`).join('');
+container.querySelectorAll('[data-toggle-habit]').forEach(btn => {
+btn.onclick = () => {
+const h = habits.find(x => x.id === btn.dataset.toggleHabit);
+if (h) { h.enabled = !h.enabled; Store.save(); this.renderHabitsConfig(); HomePage.renderHabits(); }
+};
+});
+container.querySelectorAll('[data-del-habit]').forEach(btn => {
+btn.onclick = () => {
+Store.state.habits.config = habits.filter(x => x.id !== btn.dataset.delHabit);
+Store.save(); this.renderHabitsConfig(); HomePage.renderHabits();
+};
+});
+},
+updateBackupInfo() {
+const el = document.getElementById('backupInfo');
+const last = Store.state.meta.lastBackup;
+el.textContent = last ? `Ultimo backup: ${U.formatDateIT(new Date(last).toISOString())}` : 'Ultimo backup: mai';
+},
+initThemes() {
+document.querySelectorAll('#themeGrid .theme-card').forEach(card => {
+card.classList.toggle('active', card.dataset.theme === Store.state.effects.theme);
+card.addEventListener('click', () => { Effects.applyTheme(card.dataset.theme); Haptic.success(); });
+});
+},
+refreshThemeGrid() {
+document.querySelectorAll('#themeGrid .theme-card').forEach(card => {
+card.classList.toggle('active', card.dataset.theme === Store.state.effects.theme);
+});
+},
+initEffects() {
+const e = Store.state.effects;
+const toggle = (id, key, onChange) => {
+const el = document.getElementById(id); if (!el) return;
+el.classList.toggle('on', !!e[key]);
+el.onclick = () => { e[key] = !e[key]; el.classList.toggle('on', e[key]); Store.save(); Effects.apply(); if (onChange) onChange(); Haptic.tap(); };
+};
+toggle('toggleRainbow', 'rainbow'); toggle('toggleGrid', 'grid'); toggle('toggleScan', 'scan');
+toggle('toggleParticles', 'particles', () => { if (e.particles) Particles.start(); else Particles.stop(); });
+toggle('toggleBgAnim', 'bgAnim'); toggle('toggleGlass', 'glass'); toggle('toggleHolo', 'holo');
+toggle('toggleHaptic', 'haptic'); toggle('toggleReduceMotion', 'reduceMotion'); toggle('toggleLegacy', 'legacy');
+document.querySelectorAll('#colorSwatches .color-swatch').forEach(sw => {
+sw.classList.toggle('active', sw.dataset.color === e.color);
+sw.onclick = () => { e.color = sw.dataset.color; document.querySelectorAll('#colorSwatches .color-swatch').forEach(x => x.classList.remove('active')); sw.classList.add('active'); Store.save(); Effects.apply(); };
+});
+const bindSelect = (id, key, parser = parseFloat) => {
+const el = document.getElementById(id); if (!el) return;
+el.value = String(e[key]); el.onchange = () => { e[key] = parser(el.value); Store.save(); Effects.apply(); };
+};
+bindSelect('selectGlow', 'glow'); bindSelect('selectAnim', 'anim'); bindSelect('selectMsgStyle', 'msgStyle', v => v);
+const fs = document.getElementById('fontScaleRange');
+if (fs) { fs.value = String(e.fontScale || 1); fs.oninput = () => { e.fontScale = parseFloat(fs.value); Store.save(); Effects.apply(); }; }
+document.getElementById('resetEffectsBtn').onclick = () => {
+Modal.show('Reset', '<p class="text-sm text-muted">Ripristinare default?</p>',
+`<button class="btn btn-ghost" onclick="Modal.hide()">Annulla</button><button class="btn btn-primary" id="confirmResetFx">Reset</button>`);
+document.getElementById('confirmResetFx').onclick = () => { Store.state.effects = { ...DEFAULT_EFFECTS }; Store.save(true); Effects.apply(); Modal.hide(); this.initEffects(); };
+};
+},
+refreshEffectControls() { this.initEffects(); }
 };
 
 /* =========================================================
-   SHORTCUTS
-   ========================================================= */
+SHORTCUTS
+========================================================= */
 const Shortcuts = {
-  init() {
-    document.addEventListener('keydown', (e) => {
-      if (['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) return;
-      const map = { '?': () => this.showHelp(), '/': () => { Router.go('ai'); setTimeout(() => document.getElementById('chatInput')?.focus(), 200); }, 'n': () => Router.go('workout'), 'h': () => Router.go('home'), 's': () => Router.go('settings'), 'p': () => Router.go('progress'), 't': () => Router.go('tools'), 'b': () => Router.go('body') };
-      if (map[e.key]) { map[e.key](); e.preventDefault(); }
-    });
-    document.getElementById('kbdBtn').addEventListener('click', () => this.showHelp());
-  },
-  showHelp() {
-    Modal.show('⌨️ Shortcuts', `
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <div class="flex-between"><span>Help</span><span class="kbd">?</span></div>
-        <div class="flex-between"><span>AI</span><span class="kbd">/</span></div>
-        <div class="flex-between"><span>Workout</span><span class="kbd">n</span></div>
-        <div class="flex-between"><span>Home</span><span class="kbd">h</span></div>
-        <div class="flex-between"><span>Body</span><span class="kbd">b</span></div>
-        <div class="flex-between"><span>Tools</span><span class="kbd">t</span></div>
-        <div class="flex-between"><span>Settings</span><span class="kbd">s</span></div>
-      </div>
-    `, `<button class="btn btn-ghost" onclick="Modal.hide()">Chiudi</button>`);
-  }
+init() {
+document.addEventListener('keydown', (e) => {
+if (['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) return;
+const map = { '?': () => this.showHelp(), '/': () => { Router.go('ai'); setTimeout(() => document.getElementById('chatInput')?.focus(), 200); }, 'n': () => Router.go('workout'), 'h': () => Router.go('home'), 's': () => Router.go('settings'), 'p': () => Router.go('progress'), 't': () => Router.go('tools'), 'b': () => Router.go('body') };
+if (map[e.key]) { map[e.key](); e.preventDefault(); }
+});
+document.getElementById('kbdBtn').addEventListener('click', () => this.showHelp());
+},
+showHelp() {
+Modal.show('⌨️ Shortcuts', `
+<div style="display:flex;flex-direction:column;gap:10px">
+<div class="flex-between"><span>Help</span><span class="kbd">?</span></div>
+<div class="flex-between"><span>AI</span><span class="kbd">/</span></div>
+<div class="flex-between"><span>Workout</span><span class="kbd">n</span></div>
+<div class="flex-between"><span>Home</span><span class="kbd">h</span></div>
+<div class="flex-between"><span>Body</span><span class="kbd">b</span></div>
+<div class="flex-between"><span>Tools</span><span class="kbd">t</span></div>
+<div class="flex-between"><span>Settings</span><span class="kbd">s</span></div>
+</div>
+`, `<button class="btn btn-ghost" onclick="Modal.hide()">Chiudi</button>`);
+}
 };
 
 /* =========================================================
-   APP CONTROLLER
-   ========================================================= */
+APP CONTROLLER
+========================================================= */
 const App = {
-  init() {
-    Store.load();
-    Effects.apply();
-    Router.init();
-    HomePage.bindHydration();
-    HomePage.bindAvatar();
-    HomePage.refresh();
-    NutritionPage.bindGoals();
-    NutritionPage.refresh();
-    
-    // Nutrition bindings
-    document.getElementById('addMealBtn').addEventListener('click', () => NutritionPage.addMeal());
-    document.getElementById('addPresetBtn').addEventListener('click', () => NutritionPage.addPreset());
-    document.getElementById('addCheatBtn').addEventListener('click', () => NutritionPage.addCheatMeal());
-    document.getElementById('addSupplementBtn').addEventListener('click', () => NutritionPage.addSupplement());
-    document.getElementById('startFastBtn').addEventListener('click', () => NutritionPage.startFast());
-    document.getElementById('stopFastBtn').addEventListener('click', () => NutritionPage.stopFast());
-    document.getElementById('autoCalcMacrosBtn').addEventListener('click', () => NutritionPage.autoCalcMacros());
-    
-    // AI & Copilot
-    AICoach.init();
-    Copilot.init();
-    
-    // Workout
-    WorkoutPage.init();
-    
-    // Body Page bindings
-    document.getElementById('logBodyBtn').addEventListener('click', () => BodyPage.logBody());
-    document.getElementById('addMeasurementsBtn').addEventListener('click', () => BodyPage.addMeasurements());
-    document.getElementById('addPhotoBtn').addEventListener('click', () => document.getElementById('photoInput').click());
-    document.getElementById('photoInput').addEventListener('change', (e) => {
-      const file = e.target.files?.[0];
-      if (!file) return;
-      if (file.size > 5 * 1024 * 1024) { Toast.show('Max 5MB', 'error'); return; }
-      const reader = new FileReader();
-      reader.onload = (ev) => {
-        Store.state.progress.photos = Store.state.progress.photos || [];
-        Store.state.progress.photos.push({ id: U.uid(), date: new Date().toISOString(), data: ev.target.result, notes: '' });
-        if (Store.state.progress.photos.length > 30) Store.state.progress.photos = Store.state.progress.photos.slice(-30);
-        Store.save(); BodyPage.renderPhotos();
-        Toast.show('Foto salvata ✓', 'success');
-      };
-      reader.readAsDataURL(file);
-      e.target.value = '';
-    });
-
-    // Tools & Settings & Shortcuts
-    ToolsPage.init();
-    SettingsPage.init();
-    Shortcuts.init();
-    Particles.init();
-
-    // Progress
-    document.getElementById('logWeightBtn')?.addEventListener('click', () => ProgressPage.logWeight());
-
-    // Topbar
-    document.getElementById('streakBtn').addEventListener('click', () => {
-      Toast.show(`🔥 Streak: ${Store.state.progress.streak || 0} giorni`, 'info'); Haptic.tap();
-    });
-
-    Achievements.check();
-    window.addEventListener('beforeunload', () => Store.save(true));
-
-    console.log(`%c✨ ${APP_NAME} v${APP_VERSION}`, 'color:#00d4ff;font-weight:bold;font-size:14px;');
-  },
-
-  refreshAll() {
-    HomePage.refresh();
-    NutritionPage.refresh();
-    AICoach.renderModels();
-    WorkoutPage.render();
-    BodyPage.refresh();
-    SettingsPage.init();
-  }
+init() {
+Store.load();
+Effects.apply();
+Router.init();
+HomePage.bindHydration();
+HomePage.bindAvatar();
+HomePage.refresh();
+NutritionPage.bindGoals();
+NutritionPage.refresh();
+document.getElementById('addMealBtn').addEventListener('click', () => NutritionPage.addMeal());
+document.getElementById('addPresetBtn').addEventListener('click', () => NutritionPage.addPreset());
+document.getElementById('addCheatBtn').addEventListener('click', () => NutritionPage.addCheatMeal());
+document.getElementById('addSupplementBtn').addEventListener('click', () => NutritionPage.addSupplement());
+document.getElementById('startFastBtn').addEventListener('click', () => NutritionPage.startFast());
+document.getElementById('stopFastBtn').addEventListener('click', () => NutritionPage.stopFast());
+document.getElementById('autoCalcMacrosBtn').addEventListener('click', () => NutritionPage.autoCalcMacros());
+AICoach.init();
+Copilot.init();
+WorkoutPage.init();
+document.getElementById('logBodyBtn').addEventListener('click', () => BodyPage.logBody());
+document.getElementById('addMeasurementsBtn').addEventListener('click', () => BodyPage.addMeasurements());
+document.getElementById('addPhotoBtn').addEventListener('click', () => document.getElementById('photoInput').click());
+document.getElementById('photoInput').addEventListener('change', (e) => {
+const file = e.target.files?.[0];
+if (!file) return;
+if (file.size > 5 * 1024 * 1024) { Toast.show('Max 5MB', 'error'); return; }
+const reader = new FileReader();
+reader.onload = (ev) => {
+Store.state.progress.photos = Store.state.progress.photos || [];
+Store.state.progress.photos.push({ id: U.uid(), date: new Date().toISOString(), data: ev.target.result, notes: '' });
+if (Store.state.progress.photos.length > 30) Store.state.progress.photos = Store.state.progress.photos.slice(-30);
+Store.save(); BodyPage.renderPhotos();
+Toast.show('Foto salvata ✓', 'success');
+};
+reader.readAsDataURL(file);
+e.target.value = '';
+});
+ToolsPage.init();
+SettingsPage.init();
+Shortcuts.init();
+Particles.init();
+document.getElementById('logWeightBtn')?.addEventListener('click', () => ProgressPage.logWeight());
+document.getElementById('streakBtn').addEventListener('click', () => {
+Toast.show(`🔥 Streak: ${Store.state.progress.streak || 0} giorni`, 'info'); Haptic.tap();
+});
+Achievements.check();
+window.addEventListener('beforeunload', () => Store.save(true));
+console.log(`%c✨ ${APP_NAME} v${APP_VERSION}`, 'color:#00d4ff;font-weight:bold;font-size:14px;');
+},
+refreshAll() {
+HomePage.refresh();
+NutritionPage.refresh();
+AICoach.renderModels();
+WorkoutPage.render();
+BodyPage.refresh();
+SettingsPage.init();
+}
 };
 
 /* =========================================================
-   BOOTSTRAP
-   ========================================================= */
+BOOTSTRAP
+========================================================= */
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => App.init());
+document.addEventListener('DOMContentLoaded', () => App.init());
 } else {
-  App.init();
+App.init();
 }
 </script>
 </body>
